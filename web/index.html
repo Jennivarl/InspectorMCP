@@ -572,16 +572,24 @@ function showPanel(p) {
   document.querySelectorAll(".cellbox").forEach((el) => el.onclick = () => showCell(+el.dataset.r, +el.dataset.c));
   $("runBtn").disabled = false;
 }
-async function makeDemo() {
+async function makeDemo(seed) {
   say("");
+  const body = { rows: +$("rows").value, cols: +$("cols").value };
+  if (typeof seed === "number") Object.assign(body, { rows: 4, cols: 6, seed });
   try {
-    showPanel(await api("/api/panels/demo", { method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ rows: +$("rows").value, cols: +$("cols").value }) }));
+    showPanel(await api("/api/panels/demo", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) }));
     return true;
   } catch (e) { say(e.message); return false; }
 }
-$("demoBtn").onclick = makeDemo;
-async function quick() { $("console").scrollIntoView({ behavior: "smooth", block: "start" }); if (await makeDemo()) startRun(); }
+$("demoBtn").onclick = () => makeDemo();
+// the quick demo rotates through panels known to show every outcome: pass, defect and "ask a human"
+const SHOWCASE = [14, 9, 7, 3];
+let showcase = 0;
+async function quick() {
+  $("rows").value = 4; $("cols").value = 6;
+  $("console").scrollIntoView({ behavior: "smooth", block: "start" });
+  if (await makeDemo(SHOWCASE[showcase++ % SHOWCASE.length])) startRun();
+}
 $("quickBtn").onclick = quick; $("navTry").onclick = quick;
 $("file").onchange = async () => {
   const f = $("file").files[0]; if (!f) return;
