@@ -1,0 +1,14 @@
+# Runtime (Python 3.12). OpenCV itself comes from the COOL AMI (OpenCV 5.1, see deploy/setup_server.sh);
+# off-COOL machines can use the stock wheel listed in requirements-baseline.txt instead.
+# Full lock of the deployed environment: requirements.lock
+numpy==2.5.1
+mcp==2.3.0
+fastapi==0.159.1
+starlette==1.9.0
+uvicorn==0.54.0
+pydantic==2.14.1
+python-multipart==0.0.32
+boto3==1.43.117
+google-genai==2.32.0
+httpx==0.28.1
+pytest==9.1.1

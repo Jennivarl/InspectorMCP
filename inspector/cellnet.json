@@ -1,0 +1,7 @@
+{
+ "size": 160,
+ "threshold": 0.6000000000000001,
+ "val_acc": 0.8520408163265306,
+ "epochs": 12,
+ "arch": "mobilenet_v3_small"
+}

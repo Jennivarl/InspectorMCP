@@ -1,0 +1,26 @@
+{
+ "label": "stock_x86_a",
+ "opencv": "5.0.0",
+ "opencv_module": "/home/ubuntu/v/lib/python3.12/site-packages/cv2/__init__.py",
+ "hal": "Custom HAL:                  YES (ipp (ver 0.0.1))",
+ "baseline_simd": "Baseline:                    SSE SSE2 SSE3",
+ "machine": "x86_64",
+ "cpu_threads": 2,
+ "cells": 200,
+ "stage_ms": {
+  "1_split_panel_24_cells": 13.663,
+  "2_quality": 0.313,
+  "3_enhance_clahe": 0.361,
+  "4_find_cracks": 4.411,
+  "5_find_dark_areas": 3.817,
+  "6_features_full": 7.706,
+  "7_cellnet_dnn_single": 2.731,
+  "8_second_look_6_views": 14.039,
+  "9_locate_defect_3x3": 23.436,
+  "10_zoom_line_check": 27.866,
+  "11_scan_cell_tool": 11.088
+ },
+ "agent_scan_ms_per_cell": 11.088,
+ "panel_24_cells_ms": 288.62,
+ "cells_per_second": 83.2
+}

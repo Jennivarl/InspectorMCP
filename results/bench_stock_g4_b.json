@@ -1,0 +1,26 @@
+{
+ "label": "stock_g4_b",
+ "opencv": "5.0.0",
+ "opencv_module": "/home/ubuntu/base-venv/lib/python3.12/site-packages/cv2/__init__.py",
+ "hal": "Custom HAL:                  YES (carotene (ver 0.0.1) KleidiCV (ver 26.03))",
+ "baseline_simd": "Baseline:                    NEON FP16",
+ "machine": "aarch64",
+ "cpu_threads": 2,
+ "cells": 200,
+ "stage_ms": {
+  "1_split_panel_24_cells": 11.081,
+  "2_quality": 0.368,
+  "3_enhance_clahe": 0.213,
+  "4_find_cracks": 3.957,
+  "5_find_dark_areas": 2.8,
+  "6_features_full": 6.426,
+  "7_cellnet_dnn_single": 2.058,
+  "8_second_look_6_views": 11.13,
+  "9_locate_defect_3x3": 18.632,
+  "10_zoom_line_check": 22.42,
+  "11_scan_cell_tool": 9.139
+ },
+ "agent_scan_ms_per_cell": 9.139,
+ "panel_24_cells_ms": 237.998,
+ "cells_per_second": 100.8
+}

@@ -1,0 +1,3481 @@
+{
+ "panel": "panel-1",
+ "brain": "policy",
+ "results": [
+  {
+   "image_id": "cell-2",
+   "decision": "pass",
+   "score": 0.038,
+   "row": 0,
+   "col": 0
+  },
+  {
+   "image_id": "cell-3",
+   "decision": "pass",
+   "score": 0.051,
+   "row": 0,
+   "col": 1
+  },
+  {
+   "image_id": "cell-4",
+   "decision": "human",
+   "score": 0.395,
+   "row": 0,
+   "col": 2
+  },
+  {
+   "image_id": "cell-5",
+   "decision": "pass",
+   "score": 0.001,
+   "row": 0,
+   "col": 3
+  },
+  {
+   "image_id": "cell-6",
+   "decision": "fail",
+   "score": 0.993,
+   "row": 0,
+   "col": 4
+  },
+  {
+   "image_id": "cell-7",
+   "decision": "fail",
+   "score": 1.0,
+   "row": 0,
+   "col": 5
+  },
+  {
+   "image_id": "cell-8",
+   "decision": "pass",
+   "score": 0.005,
+   "row": 1,
+   "col": 0
+  },
+  {
+   "image_id": "cell-9",
+   "decision": "pass",
+   "score": 0.017,
+   "row": 1,
+   "col": 1
+  },
+  {
+   "image_id": "cell-10",
+   "decision": "pass",
+   "score": 0.174,
+   "row": 1,
+   "col": 2
+  },
+  {
+   "image_id": "cell-11",
+   "decision": "pass",
+   "score": 0.147,
+   "row": 1,
+   "col": 3
+  },
+  {
+   "image_id": "cell-12",
+   "decision": "pass",
+   "score": 0.162,
+   "row": 1,
+   "col": 4
+  },
+  {
+   "image_id": "cell-13",
+   "decision": "pass",
+   "score": 0.057,
+   "row": 1,
+   "col": 5
+  },
+  {
+   "image_id": "cell-14",
+   "decision": "human",
+   "score": 0.44,
+   "row": 2,
+   "col": 0
+  },
+  {
+   "image_id": "cell-15",
+   "decision": "pass",
+   "score": 0.008,
+   "row": 2,
+   "col": 1
+  },
+  {
+   "image_id": "cell-16",
+   "decision": "pass",
+   "score": 0.179,
+   "row": 2,
+   "col": 2
+  },
+  {
+   "image_id": "cell-17",
+   "decision": "human",
+   "score": 0.741,
+   "row": 2,
+   "col": 3
+  },
+  {
+   "image_id": "cell-18",
+   "decision": "pass",
+   "score": 0.016,
+   "row": 2,
+   "col": 4
+  },
+  {
+   "image_id": "cell-19",
+   "decision": "pass",
+   "score": 0.155,
+   "row": 2,
+   "col": 5
+  },
+  {
+   "image_id": "cell-20",
+   "decision": "pass",
+   "score": 0.086,
+   "row": 3,
+   "col": 0
+  },
+  {
+   "image_id": "cell-21",
+   "decision": "pass",
+   "score": 0.011,
+   "row": 3,
+   "col": 1
+  },
+  {
+   "image_id": "cell-22",
+   "decision": "pass",
+   "score": 0.07,
+   "row": 3,
+   "col": 2
+  },
+  {
+   "image_id": "cell-23",
+   "decision": "fail",
+   "score": 0.845,
+   "row": 3,
+   "col": 3
+  },
+  {
+   "image_id": "cell-24",
+   "decision": "pass",
+   "score": 0.196,
+   "row": 3,
+   "col": 4
+  },
+  {
+   "image_id": "cell-25",
+   "decision": "pass",
+   "score": 0.012,
+   "row": 3,
+   "col": 5
+  }
+ ],
+ "trace": [
+  {
+   "n": 1,
+   "t": 1792721976.492,
+   "kind": "tool",
+   "tool": "split_panel",
+   "args": {
+    "image_id": "panel-1",
+    "rows": 4,
+    "cols": 6
+   },
+   "why": "cut the panel into cells",
+   "result": {
+    "cells": "[24 items]",
+    "ms": 14.46
+   },
+   "images": 0,
+   "ms": 24.4
+  },
+  {
+   "n": 2,
+   "t": 1792721976.492,
+   "kind": "cell",
+   "row": 0,
+   "col": 0,
+   "image_id": "cell-2"
+  },
+  {
+   "n": 3,
+   "t": 1792721976.493,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-2"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 48.03,
+    "brightness": 166.03,
+    "contrast": 47.91,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 0.82
+   },
+   "images": 0,
+   "ms": 1.3
+  },
+  {
+   "n": 4,
+   "t": 1792721976.519,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-2"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-2",
+    "score": 0.038,
+    "verdict": "pass",
+    "rule_score": 0.743,
+    "cracks": [
+     {
+      "box": [
+       10,
+       10,
+       24,
+       23
+      ],
+      "area": 197,
+      "length": 31.8,
+      "thickness": 6.19,
+      "strength": 23.3
+     },
+     {
+      "box": [
+       268,
+       10,
+       22,
+       22
+      ],
+      "area": 179,
+      "length": 29.7,
+      "thickness": 6.03,
+      "strength": 24.8
+     }
+    ],
+    "spots": [
+     {
+      "box": [
+       10,
+       272,
+       21,
+       20
+      ],
+      "area": 194,
+      "length": 27.6,
+      "thickness": 7.03,
+      "strength": 24.6
+     },
+     {
+      "box": [
+       271,
+       274,
+       19,
+       18
+      ],
+      "area": 154,
+      "length": 24.7,
+      "thickness": 6.22,
+      "strength": 22.7
+     },
+     {
+      "box": [
+       266,
+       192,
+       5,
+       12
+      ],
+      "area": 41,
+      "length": 11.0,
+      "thickness": 3.73,
+      "strength": 17.6
+     }
+    ],
+    "dark_areas": [
+     {
+      "box": [
+       10,
+       10,
+       21,
+       21
+      ],
+      "area": 183
+     },
+     {
+      "box": [
+       271,
+       10,
+       19,
+       19
+      ],
+      "area": 166
+     },
+     {
+      "box": [
+       10,
+       274,
+       18,
+       18
+      ],
+      "area": 164
+     }
+    ],
+    "dark_fraction": 0.0095,
+    "grain": 4.43,
+    "ms": 25.04
+   },
+   "images": 0,
+   "ms": 25.7
+  },
+  {
+   "n": 5,
+   "t": 1792721976.52,
+   "kind": "tool",
+   "tool": "mark_pass",
+   "args": {
+    "image_id": "cell-2",
+    "reason": "defect score 0.04"
+   },
+   "why": "score is low",
+   "result": {
+    "image_id": "cell-2",
+    "verdict": "pass",
+    "reason": "defect score 0.04",
+    "time": 1792721976.5194232
+   },
+   "images": 0,
+   "ms": 0.5
+  },
+  {
+   "n": 6,
+   "t": 1792721976.52,
+   "kind": "decision",
+   "row": 0,
+   "col": 0,
+   "decision": "pass",
+   "score": 0.038
+  },
+  {
+   "n": 7,
+   "t": 1792721976.52,
+   "kind": "cell",
+   "row": 0,
+   "col": 1,
+   "image_id": "cell-3"
+  },
+  {
+   "n": 8,
+   "t": 1792721976.52,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-3"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 59.95,
+    "brightness": 126.51,
+    "contrast": 33.23,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 0.41
+   },
+   "images": 0,
+   "ms": 0.8
+  },
+  {
+   "n": 9,
+   "t": 1792721976.53,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-3"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-3",
+    "score": 0.051,
+    "verdict": "pass",
+    "rule_score": 0.74,
+    "cracks": [
+     {
+      "box": [
+       13,
+       10,
+       29,
+       29
+      ],
+      "area": 107,
+      "length": 39.6,
+      "thickness": 2.7,
+      "strength": 16.9
+     },
+     {
+      "box": [
+       264,
+       10,
+       28,
+       28
+      ],
+      "area": 200,
+      "length": 38.2,
+      "thickness": 5.24,
+      "strength": 19.3
+     },
+     {
+      "box": [
+       270,
+       265,
+       22,
+       25
+      ],
+      "area": 104,
+      "length": 31.1,
+      "thickness": 3.34,
+      "strength": 16.2
+     }
+    ],
+    "spots": [],
+    "dark_areas": [
+     {
+      "box": [
+       13,
+       10,
+       25,
+       24
+      ],
+      "area": 202
+     },
+     {
+      "box": [
+       269,
+       10,
+       23,
+       22
+      ],
+      "area": 195
+     },
+     {
+      "box": [
+       270,
+       271,
+       22,
+       21
+      ],
+      "area": 179
+     }
+    ],
+    "dark_fraction": 0.0113,
+    "grain": 4.08,
+    "ms": 8.96
+   },
+   "images": 0,
+   "ms": 9.5
+  },
+  {
+   "n": 10,
+   "t": 1792721976.53,
+   "kind": "tool",
+   "tool": "mark_pass",
+   "args": {
+    "image_id": "cell-3",
+    "reason": "defect score 0.05"
+   },
+   "why": "score is low",
+   "result": {
+    "image_id": "cell-3",
+    "verdict": "pass",
+    "reason": "defect score 0.05",
+    "time": 1792721976.5301979
+   },
+   "images": 0,
+   "ms": 0.5
+  },
+  {
+   "n": 11,
+   "t": 1792721976.53,
+   "kind": "decision",
+   "row": 0,
+   "col": 1,
+   "decision": "pass",
+   "score": 0.051
+  },
+  {
+   "n": 12,
+   "t": 1792721976.53,
+   "kind": "cell",
+   "row": 0,
+   "col": 2,
+   "image_id": "cell-4"
+  },
+  {
+   "n": 13,
+   "t": 1792721976.531,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-4"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 53.5,
+    "brightness": 145.4,
+    "contrast": 40.81,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 0.38
+   },
+   "images": 0,
+   "ms": 0.7
+  },
+  {
+   "n": 14,
+   "t": 1792721976.541,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-4"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-4",
+    "score": 0.267,
+    "verdict": "uncertain",
+    "rule_score": 0.773,
+    "cracks": "[5 items]",
+    "spots": [
+     {
+      "box": [
+       282,
+       26,
+       10,
+       14
+      ],
+      "area": 60,
+      "length": 15.2,
+      "thickness": 3.95,
+      "strength": 19.1
+     },
+     {
+      "box": [
+       283,
+       262,
+       9,
+       14
+      ],
+      "area": 51,
+      "length": 14.1,
+      "thickness": 3.61,
+      "strength": 18.6
+     },
+     {
+      "box": [
+       8,
+       262,
+       8,
+       11
+      ],
+      "area": 43,
+      "length": 12.0,
+      "thickness": 3.58,
+      "strength": 16.7
+     }
+    ],
+    "dark_areas": [
+     {
+      "box": [
+       8,
+       10,
+       27,
+       26
+      ],
+      "area": 227
+     },
+     {
+      "box": [
+       267,
+       268,
+       25,
+       24
+      ],
+      "area": 222
+     },
+     {
+      "box": [
+       8,
+       267,
+       26,
+       25
+      ],
+      "area": 214
+     }
+    ],
+    "dark_fraction": 0.0127,
+    "grain": 4.56,
+    "ms": 9.43
+   },
+   "images": 0,
+   "ms": 10.0
+  },
+  {
+   "n": 15,
+   "t": 1792721976.556,
+   "kind": "tool",
+   "tool": "second_look",
+   "args": {
+    "image_id": "cell-4"
+   },
+   "why": "score 0.267 is unsure - check other views",
+   "result": {
+    "image_id": "cell-4",
+    "scores": {
+     "original": 0.267,
+     "mirror": 0.315,
+     "flip": 0.185,
+     "rotate180": 0.239,
+     "clahe": 0.682,
+     "denoise": 0.683
+    },
+    "mean": 0.395,
+    "spread": 0.498,
+    "verdict": "uncertain",
+    "ms": 13.36
+   },
+   "images": 0,
+   "ms": 14.4
+  },
+  {
+   "n": 16,
+   "t": 1792721976.579,
+   "kind": "tool",
+   "tool": "locate_defect",
+   "args": {
+    "image_id": "cell-4"
+   },
+   "why": "still unsure - where is the model looking?",
+   "result": {
+    "image_id": "cell-4",
+    "heat": [
+     [
+      -0.3400000035762787,
+      -0.4410000145435333,
+      -0.31200000643730164
+     ],
+     [
+      -0.3569999933242798,
+      -0.5600000023841858,
+      -0.3190000057220459
+     ],
+     [
+      -0.18799999356269836,
+      -0.5429999828338623,
+      -0.5709999799728394
+     ]
+    ],
+    "hot_box": "[4 items]",
+    "hot_drop": -0.188,
+    "ms": 22.99
+   },
+   "images": 0,
+   "ms": 23.8
+  },
+  {
+   "n": 17,
+   "t": 1792721976.608,
+   "kind": "tool",
+   "tool": "inspect_region",
+   "args": {
+    "image_id": "cell-4",
+    "x": 0,
+    "y": 200,
+    "w": 100,
+    "h": 100
+   },
+   "why": "zoom into the suspicious patch",
+   "result": {
+    "longest_line": 111.7,
+    "line_count": 23,
+    "straightness": 0.047,
+    "contrast": 67.2,
+    "ms": 26.25
+   },
+   "images": 1,
+   "ms": 28.7
+  },
+  {
+   "n": 18,
+   "t": 1792721976.608,
+   "kind": "tool",
+   "tool": "request_approval",
+   "args": {
+    "image_id": "cell-4",
+    "proposed_action": "pass",
+    "reason": "score 0.40 (spread 0.50); hottest patch [0, 200, 100, 100] drop -0.19; line 111.7 px, contrast 67.2"
+   },
+   "why": "evidence is mixed - a human should decide",
+   "result": {
+    "approval_id": "A-0001",
+    "status": "pending",
+    "created": 1792721976.6082942,
+    "image_id": "cell-4",
+    "panel": "panel-1",
+    "row": 0,
+    "col": 2,
+    "proposed_action": "pass",
+    "reason": "score 0.40 (spread 0.50); hottest patch [0, 200, 100, 100] drop -0.19; line 111.7 px, contrast 67.2"
+   },
+   "images": 0,
+   "ms": 0.4
+  },
+  {
+   "n": 19,
+   "t": 1792721976.608,
+   "kind": "decision",
+   "row": 0,
+   "col": 2,
+   "decision": "human",
+   "score": 0.395
+  },
+  {
+   "n": 20,
+   "t": 1792721976.608,
+   "kind": "cell",
+   "row": 0,
+   "col": 3,
+   "image_id": "cell-5"
+  },
+  {
+   "n": 21,
+   "t": 1792721976.609,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-5"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 203.53,
+    "brightness": 166.74,
+    "contrast": 38.13,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 0.43
+   },
+   "images": 0,
+   "ms": 0.7
+  },
+  {
+   "n": 22,
+   "t": 1792721976.619,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-5"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-5",
+    "score": 0.001,
+    "verdict": "pass",
+    "rule_score": 0.06,
+    "cracks": [],
+    "spots": "[4 items]",
+    "dark_areas": [],
+    "dark_fraction": 0.0,
+    "grain": 5.23,
+    "ms": 9.13
+   },
+   "images": 0,
+   "ms": 9.7
+  },
+  {
+   "n": 23,
+   "t": 1792721976.619,
+   "kind": "tool",
+   "tool": "mark_pass",
+   "args": {
+    "image_id": "cell-5",
+    "reason": "defect score 0.00"
+   },
+   "why": "score is low",
+   "result": {
+    "image_id": "cell-5",
+    "verdict": "pass",
+    "reason": "defect score 0.00",
+    "time": 1792721976.6192448
+   },
+   "images": 0,
+   "ms": 0.5
+  },
+  {
+   "n": 24,
+   "t": 1792721976.619,
+   "kind": "decision",
+   "row": 0,
+   "col": 3,
+   "decision": "pass",
+   "score": 0.001
+  },
+  {
+   "n": 25,
+   "t": 1792721976.619,
+   "kind": "cell",
+   "row": 0,
+   "col": 4,
+   "image_id": "cell-6"
+  },
+  {
+   "n": 26,
+   "t": 1792721976.62,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-6"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 51.99,
+    "brightness": 124.26,
+    "contrast": 34.57,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 0.4
+   },
+   "images": 0,
+   "ms": 0.7
+  },
+  {
+   "n": 27,
+   "t": 1792721976.63,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-6"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-6",
+    "score": 0.993,
+    "verdict": "fail",
+    "rule_score": 0.671,
+    "cracks": [],
+    "spots": "[4 items]",
+    "dark_areas": [
+     {
+      "box": [
+       249,
+       197,
+       11,
+       25
+      ],
+      "area": 225
+     },
+     {
+      "box": [
+       251,
+       179,
+       10,
+       12
+      ],
+      "area": 86
+     }
+    ],
+    "dark_fraction": 0.0045,
+    "grain": 9.21,
+    "ms": 8.89
+   },
+   "images": 0,
+   "ms": 9.5
+  },
+  {
+   "n": 28,
+   "t": 1792721976.651,
+   "kind": "tool",
+   "tool": "locate_defect",
+   "args": {
+    "image_id": "cell-6"
+   },
+   "why": "defect found - locate it for the repair ticket",
+   "result": {
+    "image_id": "cell-6",
+    "heat": [
+     [
+      0.09099999815225601,
+      0.03500000014901161,
+      0.03999999910593033
+     ],
+     [
+      0.05700000002980232,
+      0.006000000052154064,
+      0.06199999898672104
+     ],
+     [
+      0.01600000075995922,
+      0.012000000104308128,
+      0.003000000026077032
+     ]
+    ],
+    "hot_box": "[4 items]",
+    "hot_drop": 0.091,
+    "ms": 20.98
+   },
+   "images": 0,
+   "ms": 21.7
+  },
+  {
+   "n": 29,
+   "t": 1792721976.652,
+   "kind": "tool",
+   "tool": "open_ticket",
+   "args": {
+    "image_id": "cell-6",
+    "defect": "defect",
+    "severity": "high",
+    "evidence": "score 0.99; location [0, 0, 100, 100]; cracks 0; dark 0.004"
+   },
+   "why": "clear defect - send for repair",
+   "result": {
+    "ticket_id": "T-0001",
+    "created": 1792721976.6519012,
+    "image_id": "cell-6",
+    "panel": "panel-1",
+    "row": 0,
+    "col": 4,
+    "defect": "defect",
+    "severity": "high",
+    "evidence": "score 0.99; location [0, 0, 100, 100]; cracks 0; dark 0.004"
+   },
+   "images": 0,
+   "ms": 0.7
+  },
+  {
+   "n": 30,
+   "t": 1792721976.652,
+   "kind": "decision",
+   "row": 0,
+   "col": 4,
+   "decision": "fail",
+   "score": 0.993
+  },
+  {
+   "n": 31,
+   "t": 1792721976.652,
+   "kind": "cell",
+   "row": 0,
+   "col": 5,
+   "image_id": "cell-7"
+  },
+  {
+   "n": 32,
+   "t": 1792721976.653,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-7"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 24.12,
+    "brightness": 36.02,
+    "contrast": 14.58,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 0.45
+   },
+   "images": 0,
+   "ms": 0.8
+  },
+  {
+   "n": 33,
+   "t": 1792721976.662,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-7"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-7",
+    "score": 1.0,
+    "verdict": "fail",
+    "rule_score": 0.979,
+    "cracks": [],
+    "spots": [],
+    "dark_areas": [
+     {
+      "box": [
+       17,
+       206,
+       144,
+       39
+      ],
+      "area": 3382
+     },
+     {
+      "box": [
+       13,
+       254,
+       41,
+       20
+      ],
+      "area": 469
+     },
+     {
+      "box": [
+       169,
+       203,
+       13,
+       10
+      ],
+      "area": 92
+     }
+    ],
+    "dark_fraction": 0.0775,
+    "grain": 7.03,
+    "ms": 8.75
+   },
+   "images": 0,
+   "ms": 9.3
+  },
+  {
+   "n": 34,
+   "t": 1792721976.684,
+   "kind": "tool",
+   "tool": "locate_defect",
+   "args": {
+    "image_id": "cell-7"
+   },
+   "why": "defect found - locate it for the repair ticket",
+   "result": {
+    "image_id": "cell-7",
+    "heat": [
+     [
+      0.0,
+      0.0010000000474974513,
+      0.0
+     ],
+     [
+      -0.0,
+      -0.0,
+      -0.0
+     ],
+     [
+      0.0010000000474974513,
+      0.0,
+      0.0
+     ]
+    ],
+    "hot_box": "[4 items]",
+    "hot_drop": 0.001,
+    "ms": 20.64
+   },
+   "images": 0,
+   "ms": 21.4
+  },
+  {
+   "n": 35,
+   "t": 1792721976.684,
+   "kind": "tool",
+   "tool": "open_ticket",
+   "args": {
+    "image_id": "cell-7",
+    "defect": "dark area",
+    "severity": "high",
+    "evidence": "score 1.00; location [0, 200, 100, 100]; cracks 0; dark 0.077"
+   },
+   "why": "clear defect - send for repair",
+   "result": {
+    "ticket_id": "T-0002",
+    "created": 1792721976.6839201,
+    "image_id": "cell-7",
+    "panel": "panel-1",
+    "row": 0,
+    "col": 5,
+    "defect": "dark area",
+    "severity": "high",
+    "evidence": "score 1.00; location [0, 200, 100, 100]; cracks 0; dark 0.077"
+   },
+   "images": 0,
+   "ms": 0.4
+  },
+  {
+   "n": 36,
+   "t": 1792721976.684,
+   "kind": "decision",
+   "row": 0,
+   "col": 5,
+   "decision": "fail",
+   "score": 1.0
+  },
+  {
+   "n": 37,
+   "t": 1792721976.684,
+   "kind": "cell",
+   "row": 1,
+   "col": 0,
+   "image_id": "cell-8"
+  },
+  {
+   "n": 38,
+   "t": 1792721976.685,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-8"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 82.34,
+    "brightness": 149.4,
+    "contrast": 41.95,
+    "clipped_dark": 0.001,
+    "clipped_bright": 0.0,
+    "ms": 0.46
+   },
+   "images": 0,
+   "ms": 0.8
+  },
+  {
+   "n": 39,
+   "t": 1792721976.694,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-8"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-8",
+    "score": 0.005,
+    "verdict": "pass",
+    "rule_score": 0.797,
+    "cracks": [
+     {
+      "box": [
+       11,
+       8,
+       281,
+       29
+      ],
+      "area": 702,
+      "length": 280.0,
+      "thickness": 2.51,
+      "strength": 19.8
+     },
+     {
+      "box": [
+       20,
+       269,
+       272,
+       23
+      ],
+      "area": 474,
+      "length": 271.2,
+      "thickness": 1.75,
+      "strength": 18.6
+     }
+    ],
+    "spots": [
+     {
+      "box": [
+       11,
+       262,
+       10,
+       16
+      ],
+      "area": 50,
+      "length": 17.4,
+      "thickness": 2.87,
+      "strength": 17.6
+     }
+    ],
+    "dark_areas": [
+     {
+      "box": [
+       269,
+       8,
+       23,
+       22
+      ],
+      "area": 185
+     },
+     {
+      "box": [
+       11,
+       8,
+       22,
+       21
+      ],
+      "area": 169
+     },
+     {
+      "box": [
+       271,
+       272,
+       21,
+       20
+      ],
+      "area": 161
+     }
+    ],
+    "dark_fraction": 0.0097,
+    "grain": 4.11,
+    "ms": 8.93
+   },
+   "images": 0,
+   "ms": 9.5
+  },
+  {
+   "n": 40,
+   "t": 1792721976.695,
+   "kind": "tool",
+   "tool": "mark_pass",
+   "args": {
+    "image_id": "cell-8",
+    "reason": "defect score 0.01"
+   },
+   "why": "score is low",
+   "result": {
+    "image_id": "cell-8",
+    "verdict": "pass",
+    "reason": "defect score 0.01",
+    "time": 1792721976.694664
+   },
+   "images": 0,
+   "ms": 0.4
+  },
+  {
+   "n": 41,
+   "t": 1792721976.695,
+   "kind": "decision",
+   "row": 1,
+   "col": 0,
+   "decision": "pass",
+   "score": 0.005
+  },
+  {
+   "n": 42,
+   "t": 1792721976.695,
+   "kind": "cell",
+   "row": 1,
+   "col": 1,
+   "image_id": "cell-9"
+  },
+  {
+   "n": 43,
+   "t": 1792721976.696,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-9"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 75.5,
+    "brightness": 154.44,
+    "contrast": 46.74,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 0.43
+   },
+   "images": 0,
+   "ms": 0.7
+  },
+  {
+   "n": 44,
+   "t": 1792721976.705,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-9"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-9",
+    "score": 0.017,
+    "verdict": "pass",
+    "rule_score": 0.735,
+    "cracks": [
+     {
+      "box": [
+       194,
+       8,
+       49,
+       2
+      ],
+      "area": 70,
+      "length": 48.0,
+      "thickness": 1.46,
+      "strength": 43.2
+     },
+     {
+      "box": [
+       49,
+       261,
+       7,
+       31
+      ],
+      "area": 118,
+      "length": 30.1,
+      "thickness": 3.93,
+      "strength": 44.3
+     },
+     {
+      "box": [
+       40,
+       8,
+       26,
+       18
+      ],
+      "area": 108,
+      "length": 25.0,
+      "thickness": 4.32,
+      "strength": 51.8
+     }
+    ],
+    "spots": [
+     {
+      "box": [
+       57,
+       131,
+       8,
+       10
+      ],
+      "area": 46,
+      "length": 9.4,
+      "thickness": 4.9,
+      "strength": 44.5
+     }
+    ],
+    "dark_areas": [
+     {
+      "box": [
+       73,
+       278,
+       12,
+       14
+      ],
+      "area": 131
+     },
+     {
+      "box": [
+       8,
+       79,
+       13,
+       14
+      ],
+      "area": 130
+     },
+     {
+      "box": [
+       47,
+       279,
+       10,
+       13
+      ],
+      "area": 100
+     }
+    ],
+    "dark_fraction": 0.007,
+    "grain": 13.39,
+    "ms": 9.29
+   },
+   "images": 0,
+   "ms": 9.9
+  },
+  {
+   "n": 45,
+   "t": 1792721976.706,
+   "kind": "tool",
+   "tool": "mark_pass",
+   "args": {
+    "image_id": "cell-9",
+    "reason": "defect score 0.02"
+   },
+   "why": "score is low",
+   "result": {
+    "image_id": "cell-9",
+    "verdict": "pass",
+    "reason": "defect score 0.02",
+    "time": 1792721976.7057178
+   },
+   "images": 0,
+   "ms": 0.4
+  },
+  {
+   "n": 46,
+   "t": 1792721976.706,
+   "kind": "decision",
+   "row": 1,
+   "col": 1,
+   "decision": "pass",
+   "score": 0.017
+  },
+  {
+   "n": 47,
+   "t": 1792721976.706,
+   "kind": "cell",
+   "row": 1,
+   "col": 2,
+   "image_id": "cell-10"
+  },
+  {
+   "n": 48,
+   "t": 1792721976.707,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-10"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 89.99,
+    "brightness": 149.57,
+    "contrast": 36.2,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 0.42
+   },
+   "images": 0,
+   "ms": 0.7
+  },
+  {
+   "n": 49,
+   "t": 1792721976.716,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-10"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-10",
+    "score": 0.174,
+    "verdict": "pass",
+    "rule_score": 0.532,
+    "cracks": [
+     {
+      "box": [
+       67,
+       8,
+       14,
+       23
+      ],
+      "area": 98,
+      "length": 22.0,
+      "thickness": 4.45,
+      "strength": 26.3
+     }
+    ],
+    "spots": "[5 items]",
+    "dark_areas": [],
+    "dark_fraction": 0.0,
+    "grain": 7.79,
+    "ms": 9.11
+   },
+   "images": 0,
+   "ms": 9.7
+  },
+  {
+   "n": 50,
+   "t": 1792721976.717,
+   "kind": "tool",
+   "tool": "mark_pass",
+   "args": {
+    "image_id": "cell-10",
+    "reason": "defect score 0.17"
+   },
+   "why": "score is low",
+   "result": {
+    "image_id": "cell-10",
+    "verdict": "pass",
+    "reason": "defect score 0.17",
+    "time": 1792721976.7166345
+   },
+   "images": 0,
+   "ms": 0.4
+  },
+  {
+   "n": 51,
+   "t": 1792721976.717,
+   "kind": "decision",
+   "row": 1,
+   "col": 2,
+   "decision": "pass",
+   "score": 0.174
+  },
+  {
+   "n": 52,
+   "t": 1792721976.717,
+   "kind": "cell",
+   "row": 1,
+   "col": 3,
+   "image_id": "cell-11"
+  },
+  {
+   "n": 53,
+   "t": 1792721976.718,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-11"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 53.86,
+    "brightness": 157.64,
+    "contrast": 46.39,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 0.42
+   },
+   "images": 0,
+   "ms": 0.8
+  },
+  {
+   "n": 54,
+   "t": 1792721976.727,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-11"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-11",
+    "score": 0.147,
+    "verdict": "pass",
+    "rule_score": 0.731,
+    "cracks": "[5 items]",
+    "spots": [
+     {
+      "box": [
+       34,
+       210,
+       7,
+       21
+      ],
+      "area": 120,
+      "length": 20.0,
+      "thickness": 6.0,
+      "strength": 27.6
+     },
+     {
+      "box": [
+       14,
+       217,
+       4,
+       12
+      ],
+      "area": 40,
+      "length": 11.0,
+      "thickness": 3.64,
+      "strength": 19.2
+     }
+    ],
+    "dark_areas": [
+     {
+      "box": [
+       270,
+       8,
+       22,
+       21
+      ],
+      "area": 183
+     },
+     {
+      "box": [
+       10,
+       8,
+       21,
+       20
+      ],
+      "area": 172
+     },
+     {
+      "box": [
+       10,
+       274,
+       18,
+       18
+      ],
+      "area": 156
+     }
+    ],
+    "dark_fraction": 0.0102,
+    "grain": 6.16,
+    "ms": 9.32
+   },
+   "images": 0,
+   "ms": 9.9
+  },
+  {
+   "n": 55,
+   "t": 1792721976.728,
+   "kind": "tool",
+   "tool": "mark_pass",
+   "args": {
+    "image_id": "cell-11",
+    "reason": "defect score 0.15"
+   },
+   "why": "score is low",
+   "result": {
+    "image_id": "cell-11",
+    "verdict": "pass",
+    "reason": "defect score 0.15",
+    "time": 1792721976.7277603
+   },
+   "images": 0,
+   "ms": 0.4
+  },
+  {
+   "n": 56,
+   "t": 1792721976.728,
+   "kind": "decision",
+   "row": 1,
+   "col": 3,
+   "decision": "pass",
+   "score": 0.147
+  },
+  {
+   "n": 57,
+   "t": 1792721976.728,
+   "kind": "cell",
+   "row": 1,
+   "col": 4,
+   "image_id": "cell-12"
+  },
+  {
+   "n": 58,
+   "t": 1792721976.729,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-12"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 99.79,
+    "brightness": 145.57,
+    "contrast": 37.06,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 0.41
+   },
+   "images": 0,
+   "ms": 0.7
+  },
+  {
+   "n": 59,
+   "t": 1792721976.738,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-12"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-12",
+    "score": 0.162,
+    "verdict": "pass",
+    "rule_score": 0.416,
+    "cracks": [
+     {
+      "box": [
+       15,
+       61,
+       20,
+       23
+      ],
+      "area": 157,
+      "length": 28.4,
+      "thickness": 5.53,
+      "strength": 38.4
+     }
+    ],
+    "spots": "[5 items]",
+    "dark_areas": [],
+    "dark_fraction": 0.0,
+    "grain": 9.63,
+    "ms": 9.23
+   },
+   "images": 0,
+   "ms": 9.8
+  },
+  {
+   "n": 60,
+   "t": 1792721976.739,
+   "kind": "tool",
+   "tool": "mark_pass",
+   "args": {
+    "image_id": "cell-12",
+    "reason": "defect score 0.16"
+   },
+   "why": "score is low",
+   "result": {
+    "image_id": "cell-12",
+    "verdict": "pass",
+    "reason": "defect score 0.16",
+    "time": 1792721976.7387245
+   },
+   "images": 0,
+   "ms": 0.4
+  },
+  {
+   "n": 61,
+   "t": 1792721976.739,
+   "kind": "decision",
+   "row": 1,
+   "col": 4,
+   "decision": "pass",
+   "score": 0.162
+  },
+  {
+   "n": 62,
+   "t": 1792721976.739,
+   "kind": "cell",
+   "row": 1,
+   "col": 5,
+   "image_id": "cell-13"
+  },
+  {
+   "n": 63,
+   "t": 1792721976.74,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-13"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 41.11,
+    "brightness": 138.61,
+    "contrast": 43.85,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 0.43
+   },
+   "images": 0,
+   "ms": 0.7
+  },
+  {
+   "n": 64,
+   "t": 1792721976.749,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-13"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-13",
+    "score": 0.057,
+    "verdict": "pass",
+    "rule_score": 0.865,
+    "cracks": [
+     {
+      "box": [
+       8,
+       263,
+       30,
+       29
+      ],
+      "area": 143,
+      "length": 40.3,
+      "thickness": 3.55,
+      "strength": 19.1
+     },
+     {
+      "box": [
+       261,
+       264,
+       29,
+       28
+      ],
+      "area": 150,
+      "length": 38.2,
+      "thickness": 3.93,
+      "strength": 17.4
+     }
+    ],
+    "spots": "[4 items]",
+    "dark_areas": [
+     {
+      "box": [
+       8,
+       8,
+       28,
+       27
+      ],
+      "area": 232
+     },
+     {
+      "box": [
+       261,
+       8,
+       29,
+       27
+      ],
+      "area": 227
+     },
+     {
+      "box": [
+       8,
+       269,
+       23,
+       23
+      ],
+      "area": 212
+     }
+    ],
+    "dark_fraction": 0.0125,
+    "grain": 5.39,
+    "ms": 9.08
+   },
+   "images": 0,
+   "ms": 9.7
+  },
+  {
+   "n": 65,
+   "t": 1792721976.75,
+   "kind": "tool",
+   "tool": "mark_pass",
+   "args": {
+    "image_id": "cell-13",
+    "reason": "defect score 0.06"
+   },
+   "why": "score is low",
+   "result": {
+    "image_id": "cell-13",
+    "verdict": "pass",
+    "reason": "defect score 0.06",
+    "time": 1792721976.749596
+   },
+   "images": 0,
+   "ms": 0.4
+  },
+  {
+   "n": 66,
+   "t": 1792721976.75,
+   "kind": "decision",
+   "row": 1,
+   "col": 5,
+   "decision": "pass",
+   "score": 0.057
+  },
+  {
+   "n": 67,
+   "t": 1792721976.75,
+   "kind": "cell",
+   "row": 2,
+   "col": 0,
+   "image_id": "cell-14"
+  },
+  {
+   "n": 68,
+   "t": 1792721976.751,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-14"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 118.94,
+    "brightness": 163.62,
+    "contrast": 51.34,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0041,
+    "ms": 0.43
+   },
+   "images": 0,
+   "ms": 0.7
+  },
+  {
+   "n": 69,
+   "t": 1792721976.761,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-14"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-14",
+    "score": 0.391,
+    "verdict": "uncertain",
+    "rule_score": 0.532,
+    "cracks": [],
+    "spots": [
+     {
+      "box": [
+       177,
+       24,
+       5,
+       10
+      ],
+      "area": 36,
+      "length": 9.0,
+      "thickness": 4.0,
+      "strength": 38.1
+     },
+     {
+      "box": [
+       23,
+       219,
+       10,
+       6
+      ],
+      "area": 32,
+      "length": 9.0,
+      "thickness": 3.56,
+      "strength": 38.4
+     }
+    ],
+    "dark_areas": [
+     {
+      "box": [
+       168,
+       8,
+       26,
+       16
+      ],
+      "area": 280
+     },
+     {
+      "box": [
+       117,
+       280,
+       14,
+       12
+      ],
+      "area": 121
+     },
+     {
+      "box": [
+       153,
+       8,
+       13,
+       9
+      ],
+      "area": 87
+     }
+    ],
+    "dark_fraction": 0.0074,
+    "grain": 12.18,
+    "ms": 9.73
+   },
+   "images": 0,
+   "ms": 10.3
+  },
+  {
+   "n": 70,
+   "t": 1792721976.774,
+   "kind": "tool",
+   "tool": "second_look",
+   "args": {
+    "image_id": "cell-14"
+   },
+   "why": "score 0.391 is unsure - check other views",
+   "result": {
+    "image_id": "cell-14",
+    "scores": {
+     "original": 0.391,
+     "mirror": 0.455,
+     "flip": 0.464,
+     "rotate180": 0.617,
+     "clahe": 0.214,
+     "denoise": 0.501
+    },
+    "mean": 0.44,
+    "spread": 0.404,
+    "verdict": "uncertain",
+    "ms": 12.18
+   },
+   "images": 0,
+   "ms": 13.2
+  },
+  {
+   "n": 71,
+   "t": 1792721976.797,
+   "kind": "tool",
+   "tool": "locate_defect",
+   "args": {
+    "image_id": "cell-14"
+   },
+   "why": "still unsure - where is the model looking?",
+   "result": {
+    "image_id": "cell-14",
+    "heat": [
+     [
+      -0.35199999809265137,
+      -0.5479999780654907,
+      -0.5460000038146973
+     ],
+     [
+      -0.49900001287460327,
+      -0.5809999704360962,
+      -0.46700000762939453
+     ],
+     [
+      -0.4189999997615814,
+      -0.5460000038146973,
+      -0.44200000166893005
+     ]
+    ],
+    "hot_box": "[4 items]",
+    "hot_drop": -0.352,
+    "ms": 21.99
+   },
+   "images": 0,
+   "ms": 22.8
+  },
+  {
+   "n": 72,
+   "t": 1792721976.82,
+   "kind": "tool",
+   "tool": "inspect_region",
+   "args": {
+    "image_id": "cell-14",
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 100
+   },
+   "why": "zoom into the suspicious patch",
+   "result": {
+    "longest_line": 105.7,
+    "line_count": 19,
+    "straightness": 0.063,
+    "contrast": 58.3,
+    "ms": 20.34
+   },
+   "images": 1,
+   "ms": 22.7
+  },
+  {
+   "n": 73,
+   "t": 1792721976.82,
+   "kind": "tool",
+   "tool": "request_approval",
+   "args": {
+    "image_id": "cell-14",
+    "proposed_action": "pass",
+    "reason": "score 0.44 (spread 0.40); hottest patch [0, 0, 100, 100] drop -0.35; line 105.7 px, contrast 58.3"
+   },
+   "why": "evidence is mixed - a human should decide",
+   "result": {
+    "approval_id": "A-0002",
+    "status": "pending",
+    "created": 1792721976.8197896,
+    "image_id": "cell-14",
+    "panel": "panel-1",
+    "row": 2,
+    "col": 0,
+    "proposed_action": "pass",
+    "reason": "score 0.44 (spread 0.40); hottest patch [0, 0, 100, 100] drop -0.35; line 105.7 px, contrast 58.3"
+   },
+   "images": 0,
+   "ms": 0.4
+  },
+  {
+   "n": 74,
+   "t": 1792721976.82,
+   "kind": "decision",
+   "row": 2,
+   "col": 0,
+   "decision": "human",
+   "score": 0.44
+  },
+  {
+   "n": 75,
+   "t": 1792721976.82,
+   "kind": "cell",
+   "row": 2,
+   "col": 1,
+   "image_id": "cell-15"
+  },
+  {
+   "n": 76,
+   "t": 1792721976.821,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-15"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 113.96,
+    "brightness": 158.09,
+    "contrast": 40.81,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 0.45
+   },
+   "images": 0,
+   "ms": 0.8
+  },
+  {
+   "n": 77,
+   "t": 1792721976.831,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-15"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-15",
+    "score": 0.008,
+    "verdict": "pass",
+    "rule_score": 0.55,
+    "cracks": [
+     {
+      "box": [
+       25,
+       286,
+       53,
+       6
+      ],
+      "area": 71,
+      "length": 52.1,
+      "thickness": 1.36,
+      "strength": 16.1
+     },
+     {
+      "box": [
+       258,
+       268,
+       34,
+       24
+      ],
+      "area": 125,
+      "length": 40.2,
+      "thickness": 3.11,
+      "strength": 16.8
+     },
+     {
+      "box": [
+       13,
+       270,
+       14,
+       16
+      ],
+      "area": 48,
+      "length": 19.1,
+      "thickness": 2.51,
+      "strength": 16.0
+     }
+    ],
+    "spots": [
+     {
+      "box": [
+       282,
+       26,
+       10,
+       13
+      ],
+      "area": 46,
+      "length": 14.1,
+      "thickness": 3.25,
+      "strength": 16.7
+     }
+    ],
+    "dark_areas": [
+     {
+      "box": [
+       272,
+       272,
+       20,
+       20
+      ],
+      "area": 156
+     },
+     {
+      "box": [
+       13,
+       275,
+       18,
+       17
+      ],
+      "area": 128
+     }
+    ],
+    "dark_fraction": 0.0042,
+    "grain": 3.56,
+    "ms": 9.5
+   },
+   "images": 0,
+   "ms": 10.1
+  },
+  {
+   "n": 78,
+   "t": 1792721976.831,
+   "kind": "tool",
+   "tool": "mark_pass",
+   "args": {
+    "image_id": "cell-15",
+    "reason": "defect score 0.01"
+   },
+   "why": "score is low",
+   "result": {
+    "image_id": "cell-15",
+    "verdict": "pass",
+    "reason": "defect score 0.01",
+    "time": 1792721976.831107
+   },
+   "images": 0,
+   "ms": 0.5
+  },
+  {
+   "n": 79,
+   "t": 1792721976.831,
+   "kind": "decision",
+   "row": 2,
+   "col": 1,
+   "decision": "pass",
+   "score": 0.008
+  },
+  {
+   "n": 80,
+   "t": 1792721976.831,
+   "kind": "cell",
+   "row": 2,
+   "col": 2,
+   "image_id": "cell-16"
+  },
+  {
+   "n": 81,
+   "t": 1792721976.832,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-16"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 148.43,
+    "brightness": 172.78,
+    "contrast": 44.43,
+    "clipped_dark": 0.0044,
+    "clipped_bright": 0.0,
+    "ms": 0.41
+   },
+   "images": 0,
+   "ms": 0.7
+  },
+  {
+   "n": 82,
+   "t": 1792721976.842,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-16"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-16",
+    "score": 0.179,
+    "verdict": "pass",
+    "rule_score": 0.513,
+    "cracks": [
+     {
+      "box": [
+       215,
+       9,
+       7,
+       32
+      ],
+      "area": 177,
+      "length": 31.0,
+      "thickness": 5.71,
+      "strength": 20.9
+     },
+     {
+      "box": [
+       272,
+       9,
+       16,
+       19
+      ],
+      "area": 118,
+      "length": 22.3,
+      "thickness": 5.29,
+      "strength": 18.1
+     },
+     {
+      "box": [
+       13,
+       10,
+       15,
+       17
+      ],
+      "area": 103,
+      "length": 21.2,
+      "thickness": 4.86,
+      "strength": 17.9
+     }
+    ],
+    "spots": [
+     {
+      "box": [
+       110,
+       276,
+       6,
+       11
+      ],
+      "area": 57,
+      "length": 10.0,
+      "thickness": 5.7,
+      "strength": 19.9
+     }
+    ],
+    "dark_areas": [
+     {
+      "box": [
+       272,
+       9,
+       16,
+       16
+      ],
+      "area": 119
+     },
+     {
+      "box": [
+       13,
+       9,
+       14,
+       14
+      ],
+      "area": 96
+     },
+     {
+      "box": [
+       13,
+       273,
+       10,
+       10
+      ],
+      "area": 60
+     }
+    ],
+    "dark_fraction": 0.0047,
+    "grain": 3.26,
+    "ms": 9.13
+   },
+   "images": 0,
+   "ms": 9.7
+  },
+  {
+   "n": 83,
+   "t": 1792721976.842,
+   "kind": "tool",
+   "tool": "mark_pass",
+   "args": {
+    "image_id": "cell-16",
+    "reason": "defect score 0.18"
+   },
+   "why": "score is low",
+   "result": {
+    "image_id": "cell-16",
+    "verdict": "pass",
+    "reason": "defect score 0.18",
+    "time": 1792721976.8420272
+   },
+   "images": 0,
+   "ms": 0.4
+  },
+  {
+   "n": 84,
+   "t": 1792721976.842,
+   "kind": "decision",
+   "row": 2,
+   "col": 2,
+   "decision": "pass",
+   "score": 0.179
+  },
+  {
+   "n": 85,
+   "t": 1792721976.842,
+   "kind": "cell",
+   "row": 2,
+   "col": 3,
+   "image_id": "cell-17"
+  },
+  {
+   "n": 86,
+   "t": 1792721976.843,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-17"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 34.08,
+    "brightness": 89.36,
+    "contrast": 20.49,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 0.4
+   },
+   "images": 0,
+   "ms": 0.8
+  },
+  {
+   "n": 87,
+   "t": 1792721976.853,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-17"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-17",
+    "score": 0.582,
+    "verdict": "uncertain",
+    "rule_score": 0.824,
+    "cracks": "[4 items]",
+    "spots": [],
+    "dark_areas": [],
+    "dark_fraction": 0.0,
+    "grain": 5.13,
+    "ms": 9.48
+   },
+   "images": 0,
+   "ms": 10.1
+  },
+  {
+   "n": 88,
+   "t": 1792721976.866,
+   "kind": "tool",
+   "tool": "second_look",
+   "args": {
+    "image_id": "cell-17"
+   },
+   "why": "score 0.582 is unsure - check other views",
+   "result": {
+    "image_id": "cell-17",
+    "scores": {
+     "original": 0.582,
+     "mirror": 0.829,
+     "flip": 0.531,
+     "rotate180": 0.953,
+     "clahe": 0.998,
+     "denoise": 0.556
+    },
+    "mean": 0.741,
+    "spread": 0.467,
+    "verdict": "uncertain",
+    "ms": 12.18
+   },
+   "images": 0,
+   "ms": 13.3
+  },
+  {
+   "n": 89,
+   "t": 1792721976.888,
+   "kind": "tool",
+   "tool": "locate_defect",
+   "args": {
+    "image_id": "cell-17"
+   },
+   "why": "still unsure - where is the model looking?",
+   "result": {
+    "image_id": "cell-17",
+    "heat": [
+     [
+      -0.2070000022649765,
+      -0.2540000081062317,
+      -0.2720000147819519
+     ],
+     [
+      -0.19599999487400055,
+      -0.3659999966621399,
+      -0.30799999833106995
+     ],
+     [
+      -0.33899998664855957,
+      -0.3199999928474426,
+      -0.4050000011920929
+     ]
+    ],
+    "hot_box": "[4 items]",
+    "hot_drop": -0.196,
+    "ms": 20.92
+   },
+   "images": 0,
+   "ms": 21.7
+  },
+  {
+   "n": 90,
+   "t": 1792721976.901,
+   "kind": "tool",
+   "tool": "inspect_region",
+   "args": {
+    "image_id": "cell-17",
+    "x": 0,
+    "y": 100,
+    "w": 100,
+    "h": 100
+   },
+   "why": "zoom into the suspicious patch",
+   "result": {
+    "longest_line": 123.7,
+    "line_count": 14,
+    "straightness": 0.55,
+    "contrast": 66.7,
+    "ms": 10.09
+   },
+   "images": 1,
+   "ms": 12.5
+  },
+  {
+   "n": 91,
+   "t": 1792721976.901,
+   "kind": "tool",
+   "tool": "request_approval",
+   "args": {
+    "image_id": "cell-17",
+    "proposed_action": "fail",
+    "reason": "score 0.74 (spread 0.47); hottest patch [0, 100, 100, 100] drop -0.20; line 123.7 px, contrast 66.7"
+   },
+   "why": "evidence is mixed - a human should decide",
+   "result": {
+    "approval_id": "A-0003",
+    "status": "pending",
+    "created": 1792721976.900808,
+    "image_id": "cell-17",
+    "panel": "panel-1",
+    "row": 2,
+    "col": 3,
+    "proposed_action": "fail",
+    "reason": "score 0.74 (spread 0.47); hottest patch [0, 100, 100, 100] drop -0.20; line 123.7 px, contrast 66.7"
+   },
+   "images": 0,
+   "ms": 0.4
+  },
+  {
+   "n": 92,
+   "t": 1792721976.901,
+   "kind": "decision",
+   "row": 2,
+   "col": 3,
+   "decision": "human",
+   "score": 0.741
+  },
+  {
+   "n": 93,
+   "t": 1792721976.901,
+   "kind": "cell",
+   "row": 2,
+   "col": 4,
+   "image_id": "cell-18"
+  },
+  {
+   "n": 94,
+   "t": 1792721976.902,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-18"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 54.78,
+    "brightness": 129.51,
+    "contrast": 32.65,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 0.45
+   },
+   "images": 0,
+   "ms": 0.8
+  },
+  {
+   "n": 95,
+   "t": 1792721976.912,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-18"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-18",
+    "score": 0.016,
+    "verdict": "pass",
+    "rule_score": 0.657,
+    "cracks": [
+     {
+      "box": [
+       83,
+       8,
+       19,
+       2
+      ],
+      "area": 27,
+      "length": 18.0,
+      "thickness": 1.5,
+      "strength": 26.7
+     }
+    ],
+    "spots": [
+     {
+      "box": [
+       50,
+       270,
+       10,
+       9
+      ],
+      "area": 63,
+      "length": 9.9,
+      "thickness": 6.36,
+      "strength": 32.3
+     }
+    ],
+    "dark_areas": [],
+    "dark_fraction": 0.0,
+    "grain": 8.16,
+    "ms": 9.21
+   },
+   "images": 0,
+   "ms": 9.8
+  },
+  {
+   "n": 96,
+   "t": 1792721976.912,
+   "kind": "tool",
+   "tool": "mark_pass",
+   "args": {
+    "image_id": "cell-18",
+    "reason": "defect score 0.02"
+   },
+   "why": "score is low",
+   "result": {
+    "image_id": "cell-18",
+    "verdict": "pass",
+    "reason": "defect score 0.02",
+    "time": 1792721976.9117844
+   },
+   "images": 0,
+   "ms": 0.4
+  },
+  {
+   "n": 97,
+   "t": 1792721976.912,
+   "kind": "decision",
+   "row": 2,
+   "col": 4,
+   "decision": "pass",
+   "score": 0.016
+  },
+  {
+   "n": 98,
+   "t": 1792721976.912,
+   "kind": "cell",
+   "row": 2,
+   "col": 5,
+   "image_id": "cell-19"
+  },
+  {
+   "n": 99,
+   "t": 1792721976.913,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-19"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 98.29,
+    "brightness": 174.64,
+    "contrast": 50.23,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 0.42
+   },
+   "images": 0,
+   "ms": 0.7
+  },
+  {
+   "n": 100,
+   "t": 1792721976.922,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-19"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-19",
+    "score": 0.155,
+    "verdict": "pass",
+    "rule_score": 0.772,
+    "cracks": [
+     {
+      "box": [
+       26,
+       8,
+       264,
+       27
+      ],
+      "area": 516,
+      "length": 263.2,
+      "thickness": 1.96,
+      "strength": 19.9
+     },
+     {
+      "box": [
+       259,
+       272,
+       29,
+       20
+      ],
+      "area": 124,
+      "length": 33.8,
+      "thickness": 3.67,
+      "strength": 17.6
+     },
+     {
+      "box": [
+       8,
+       262,
+       17,
+       24
+      ],
+      "area": 84,
+      "length": 28.0,
+      "thickness": 3.0,
+      "strength": 17.1
+     }
+    ],
+    "spots": "[4 items]",
+    "dark_areas": [
+     {
+      "box": [
+       8,
+       8,
+       24,
+       24
+      ],
+      "area": 214
+     },
+     {
+      "box": [
+       266,
+       8,
+       24,
+       23
+      ],
+      "area": 213
+     },
+     {
+      "box": [
+       8,
+       271,
+       22,
+       21
+      ],
+      "area": 181
+     }
+    ],
+    "dark_fraction": 0.0115,
+    "grain": 5.41,
+    "ms": 9.12
+   },
+   "images": 0,
+   "ms": 9.7
+  },
+  {
+   "n": 101,
+   "t": 1792721976.923,
+   "kind": "tool",
+   "tool": "mark_pass",
+   "args": {
+    "image_id": "cell-19",
+    "reason": "defect score 0.15"
+   },
+   "why": "score is low",
+   "result": {
+    "image_id": "cell-19",
+    "verdict": "pass",
+    "reason": "defect score 0.15",
+    "time": 1792721976.92265
+   },
+   "images": 0,
+   "ms": 0.4
+  },
+  {
+   "n": 102,
+   "t": 1792721976.923,
+   "kind": "decision",
+   "row": 2,
+   "col": 5,
+   "decision": "pass",
+   "score": 0.155
+  },
+  {
+   "n": 103,
+   "t": 1792721976.923,
+   "kind": "cell",
+   "row": 3,
+   "col": 0,
+   "image_id": "cell-20"
+  },
+  {
+   "n": 104,
+   "t": 1792721976.924,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-20"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 135.5,
+    "brightness": 164.0,
+    "contrast": 43.44,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 0.43
+   },
+   "images": 0,
+   "ms": 0.7
+  },
+  {
+   "n": 105,
+   "t": 1792721976.933,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-20"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-20",
+    "score": 0.086,
+    "verdict": "pass",
+    "rule_score": 0.36,
+    "cracks": [
+     {
+      "box": [
+       17,
+       178,
+       9,
+       21
+      ],
+      "area": 100,
+      "length": 20.4,
+      "thickness": 4.91,
+      "strength": 32.0
+     }
+    ],
+    "spots": "[5 items]",
+    "dark_areas": [],
+    "dark_fraction": 0.0,
+    "grain": 9.12,
+    "ms": 9.28
+   },
+   "images": 0,
+   "ms": 9.8
+  },
+  {
+   "n": 106,
+   "t": 1792721976.934,
+   "kind": "tool",
+   "tool": "mark_pass",
+   "args": {
+    "image_id": "cell-20",
+    "reason": "defect score 0.09"
+   },
+   "why": "score is low",
+   "result": {
+    "image_id": "cell-20",
+    "verdict": "pass",
+    "reason": "defect score 0.09",
+    "time": 1792721976.9337516
+   },
+   "images": 0,
+   "ms": 0.5
+  },
+  {
+   "n": 107,
+   "t": 1792721976.934,
+   "kind": "decision",
+   "row": 3,
+   "col": 0,
+   "decision": "pass",
+   "score": 0.086
+  },
+  {
+   "n": 108,
+   "t": 1792721976.934,
+   "kind": "cell",
+   "row": 3,
+   "col": 1,
+   "image_id": "cell-21"
+  },
+  {
+   "n": 109,
+   "t": 1792721976.935,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-21"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 182.49,
+    "brightness": 156.07,
+    "contrast": 37.25,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 0.41
+   },
+   "images": 0,
+   "ms": 0.7
+  },
+  {
+   "n": 110,
+   "t": 1792721976.944,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-21"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-21",
+    "score": 0.011,
+    "verdict": "pass",
+    "rule_score": 0.1,
+    "cracks": [
+     {
+      "box": [
+       145,
+       269,
+       5,
+       21
+      ],
+      "area": 51,
+      "length": 20.2,
+      "thickness": 2.52,
+      "strength": 24.4
+     }
+    ],
+    "spots": [
+     {
+      "box": [
+       47,
+       277,
+       8,
+       13
+      ],
+      "area": 47,
+      "length": 13.0,
+      "thickness": 3.62,
+      "strength": 26.9
+     },
+     {
+      "box": [
+       84,
+       271,
+       6,
+       9
+      ],
+      "area": 31,
+      "length": 8.2,
+      "thickness": 3.77,
+      "strength": 23.9
+     }
+    ],
+    "dark_areas": [],
+    "dark_fraction": 0.0,
+    "grain": 5.87,
+    "ms": 9.17
+   },
+   "images": 0,
+   "ms": 9.7
+  },
+  {
+   "n": 111,
+   "t": 1792721976.945,
+   "kind": "tool",
+   "tool": "mark_pass",
+   "args": {
+    "image_id": "cell-21",
+    "reason": "defect score 0.01"
+   },
+   "why": "score is low",
+   "result": {
+    "image_id": "cell-21",
+    "verdict": "pass",
+    "reason": "defect score 0.01",
+    "time": 1792721976.9446359
+   },
+   "images": 0,
+   "ms": 0.4
+  },
+  {
+   "n": 112,
+   "t": 1792721976.945,
+   "kind": "decision",
+   "row": 3,
+   "col": 1,
+   "decision": "pass",
+   "score": 0.011
+  },
+  {
+   "n": 113,
+   "t": 1792721976.945,
+   "kind": "cell",
+   "row": 3,
+   "col": 2,
+   "image_id": "cell-22"
+  },
+  {
+   "n": 114,
+   "t": 1792721976.946,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-22"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 32.78,
+    "brightness": 109.52,
+    "contrast": 29.58,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 0.41
+   },
+   "images": 0,
+   "ms": 0.7
+  },
+  {
+   "n": 115,
+   "t": 1792721976.955,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-22"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-22",
+    "score": 0.07,
+    "verdict": "pass",
+    "rule_score": 0.716,
+    "cracks": [],
+    "spots": "[4 items]",
+    "dark_areas": [
+     {
+      "box": [
+       8,
+       177,
+       11,
+       24
+      ],
+      "area": 206
+     }
+    ],
+    "dark_fraction": 0.003,
+    "grain": 6.96,
+    "ms": 8.88
+   },
+   "images": 0,
+   "ms": 9.4
+  },
+  {
+   "n": 116,
+   "t": 1792721976.955,
+   "kind": "tool",
+   "tool": "mark_pass",
+   "args": {
+    "image_id": "cell-22",
+    "reason": "defect score 0.07"
+   },
+   "why": "score is low",
+   "result": {
+    "image_id": "cell-22",
+    "verdict": "pass",
+    "reason": "defect score 0.07",
+    "time": 1792721976.95519
+   },
+   "images": 0,
+   "ms": 0.4
+  },
+  {
+   "n": 117,
+   "t": 1792721976.955,
+   "kind": "decision",
+   "row": 3,
+   "col": 2,
+   "decision": "pass",
+   "score": 0.07
+  },
+  {
+   "n": 118,
+   "t": 1792721976.955,
+   "kind": "cell",
+   "row": 3,
+   "col": 3,
+   "image_id": "cell-23"
+  },
+  {
+   "n": 119,
+   "t": 1792721976.956,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-23"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 52.62,
+    "brightness": 145.68,
+    "contrast": 44.87,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 0.39
+   },
+   "images": 0,
+   "ms": 0.7
+  },
+  {
+   "n": 120,
+   "t": 1792721976.966,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-23"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-23",
+    "score": 0.845,
+    "verdict": "fail",
+    "rule_score": 0.847,
+    "cracks": [
+     {
+      "box": [
+       25,
+       8,
+       206,
+       18
+      ],
+      "area": 689,
+      "length": 205.0,
+      "thickness": 3.36,
+      "strength": 22.8
+     }
+    ],
+    "spots": [],
+    "dark_areas": [
+     {
+      "box": [
+       187,
+       8,
+       14,
+       8
+      ],
+      "area": 86
+     },
+     {
+      "box": [
+       22,
+       8,
+       13,
+       11
+      ],
+      "area": 77
+     }
+    ],
+    "dark_fraction": 0.0032,
+    "grain": 5.89,
+    "ms": 8.84
+   },
+   "images": 0,
+   "ms": 9.4
+  },
+  {
+   "n": 121,
+   "t": 1792721976.987,
+   "kind": "tool",
+   "tool": "locate_defect",
+   "args": {
+    "image_id": "cell-23"
+   },
+   "why": "defect found - locate it for the repair ticket",
+   "result": {
+    "image_id": "cell-23",
+    "heat": [
+     [
+      0.14499999582767487,
+      0.017999999225139618,
+      0.014000000432133675
+     ],
+     [
+      0.2750000059604645,
+      -0.0,
+      0.12300000339746475
+     ],
+     [
+      0.04800000041723251,
+      0.05299999937415123,
+      0.03500000014901161
+     ]
+    ],
+    "hot_box": "[4 items]",
+    "hot_drop": 0.275,
+    "ms": 20.76
+   },
+   "images": 0,
+   "ms": 21.5
+  },
+  {
+   "n": 122,
+   "t": 1792721976.988,
+   "kind": "tool",
+   "tool": "open_ticket",
+   "args": {
+    "image_id": "cell-23",
+    "defect": "crack",
+    "severity": "medium",
+    "evidence": "score 0.84; location [0, 100, 100, 100]; cracks 1; dark 0.003"
+   },
+   "why": "clear defect - send for repair",
+   "result": {
+    "ticket_id": "T-0003",
+    "created": 1792721976.9873416,
+    "image_id": "cell-23",
+    "panel": "panel-1",
+    "row": 3,
+    "col": 3,
+    "defect": "crack",
+    "severity": "medium",
+    "evidence": "score 0.84; location [0, 100, 100, 100]; cracks 1; dark 0.003"
+   },
+   "images": 0,
+   "ms": 0.5
+  },
+  {
+   "n": 123,
+   "t": 1792721976.988,
+   "kind": "decision",
+   "row": 3,
+   "col": 3,
+   "decision": "fail",
+   "score": 0.845
+  },
+  {
+   "n": 124,
+   "t": 1792721976.988,
+   "kind": "cell",
+   "row": 3,
+   "col": 4,
+   "image_id": "cell-24"
+  },
+  {
+   "n": 125,
+   "t": 1792721976.988,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-24"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 63.99,
+    "brightness": 146.46,
+    "contrast": 40.46,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 0.46
+   },
+   "images": 0,
+   "ms": 0.8
+  },
+  {
+   "n": 126,
+   "t": 1792721976.998,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-24"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-24",
+    "score": 0.196,
+    "verdict": "pass",
+    "rule_score": 0.462,
+    "cracks": [
+     {
+      "box": [
+       272,
+       268,
+       20,
+       22
+      ],
+      "area": 110,
+      "length": 28.3,
+      "thickness": 3.89,
+      "strength": 23.2
+     }
+    ],
+    "spots": "[5 items]",
+    "dark_areas": [
+     {
+      "box": [
+       8,
+       266,
+       25,
+       24
+      ],
+      "area": 200
+     },
+     {
+      "box": [
+       8,
+       8,
+       22,
+       21
+      ],
+      "area": 181
+     },
+     {
+      "box": [
+       271,
+       8,
+       21,
+       20
+      ],
+      "area": 179
+     }
+    ],
+    "dark_fraction": 0.0103,
+    "grain": 4.9,
+    "ms": 9.55
+   },
+   "images": 0,
+   "ms": 10.1
+  },
+  {
+   "n": 127,
+   "t": 1792721976.999,
+   "kind": "tool",
+   "tool": "mark_pass",
+   "args": {
+    "image_id": "cell-24",
+    "reason": "defect score 0.20"
+   },
+   "why": "score is low",
+   "result": {
+    "image_id": "cell-24",
+    "verdict": "pass",
+    "reason": "defect score 0.20",
+    "time": 1792721976.9987373
+   },
+   "images": 0,
+   "ms": 0.4
+  },
+  {
+   "n": 128,
+   "t": 1792721976.999,
+   "kind": "decision",
+   "row": 3,
+   "col": 4,
+   "decision": "pass",
+   "score": 0.196
+  },
+  {
+   "n": 129,
+   "t": 1792721976.999,
+   "kind": "cell",
+   "row": 3,
+   "col": 5,
+   "image_id": "cell-25"
+  },
+  {
+   "n": 130,
+   "t": 1792721977.0,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-25"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 174.1,
+    "brightness": 152.03,
+    "contrast": 40.22,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 0.42
+   },
+   "images": 0,
+   "ms": 0.8
+  },
+  {
+   "n": 131,
+   "t": 1792721977.01,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-25"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-25",
+    "score": 0.012,
+    "verdict": "pass",
+    "rule_score": 0.057,
+    "cracks": [],
+    "spots": [],
+    "dark_areas": [],
+    "dark_fraction": 0.0,
+    "grain": 7.17,
+    "ms": 9.83
+   },
+   "images": 0,
+   "ms": 10.4
+  },
+  {
+   "n": 132,
+   "t": 1792721977.011,
+   "kind": "tool",
+   "tool": "mark_pass",
+   "args": {
+    "image_id": "cell-25",
+    "reason": "defect score 0.01"
+   },
+   "why": "score is low",
+   "result": {
+    "image_id": "cell-25",
+    "verdict": "pass",
+    "reason": "defect score 0.01",
+    "time": 1792721977.0103812
+   },
+   "images": 0,
+   "ms": 0.5
+  },
+  {
+   "n": 133,
+   "t": 1792721977.011,
+   "kind": "decision",
+   "row": 3,
+   "col": 5,
+   "decision": "pass",
+   "score": 0.012
+  }
+ ]
+}

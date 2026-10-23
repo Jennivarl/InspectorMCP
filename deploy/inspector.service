@@ -1,0 +1,19 @@
+[Unit]
+Description=InspectorMCP web app + MCP endpoint
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/inspector
+# COOL: OpenCV 5.1 Python bindings + its native libraries
+Environment=PYTHONPATH=/home/ubuntu/inspector:/opt/cool/python_3.12/site-packages/cv2/python-3.12
+Environment=LD_LIBRARY_PATH=/opt/cool/cpp_sdk/lib:/opt/ffmpeg/lib
+ExecStart=/home/ubuntu/inspector/.venv/bin/uvicorn inspector.web:app --host 0.0.0.0 --port 8080 --workers 1 --proxy-headers
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

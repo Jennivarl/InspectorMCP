@@ -1,0 +1,26 @@
+{
+ "label": "cool_g4_b",
+ "opencv": "5.1.0-dev",
+ "opencv_module": "/opt/cool/python_3.12/site-packages/cv2/python-3.12/cv2.cpython-312-aarch64-linux-gnu.so",
+ "hal": "Custom HAL:                  YES (carotene (ver 0.0.1) KleidiCV (ver 0.7.0))",
+ "baseline_simd": "Baseline:                    SVE NEON FP16 NEON_DOTPROD NEON_FP16 NEON_BF16",
+ "machine": "aarch64",
+ "cpu_threads": 2,
+ "cells": 200,
+ "stage_ms": {
+  "1_split_panel_24_cells": 11.312,
+  "2_quality": 0.375,
+  "3_enhance_clahe": 0.149,
+  "4_find_cracks": 3.861,
+  "5_find_dark_areas": 2.793,
+  "6_features_full": 6.299,
+  "7_cellnet_dnn_single": 2.329,
+  "8_second_look_6_views": 12.361,
+  "9_locate_defect_3x3": 20.852,
+  "10_zoom_line_check": 20.764,
+  "11_scan_cell_tool": 9.263
+ },
+ "agent_scan_ms_per_cell": 9.263,
+ "panel_24_cells_ms": 241.587,
+ "cells_per_second": 99.3
+}

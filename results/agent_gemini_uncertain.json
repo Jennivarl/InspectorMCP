@@ -1,0 +1,742 @@
+{
+ "brain": "gemini",
+ "seconds": 2360.6,
+ "summary": {
+  "cells": 79,
+  "auto_decided": 61,
+  "sent_to_human": 18,
+  "human_rate": 0.2278,
+  "auto_accuracy": 0.5902,
+  "auto_defects_caught": 16,
+  "auto_false_alarms": 16,
+  "auto_missed_defects": 9,
+  "defects_among_human_cases": 10,
+  "avg_steps_per_cell": 7.04
+ },
+ "llm_requests": 851,
+ "tool_calls": {
+  "check_quality": 79,
+  "enhance_image": 38,
+  "scan_cell": 80,
+  "view_cell": 84,
+  "second_look": 73,
+  "inspect_region": 84,
+  "locate_defect": 39,
+  "open_ticket": 32,
+  "request_approval": 18,
+  "mark_pass": 29
+ },
+ "per_cell": [
+  {
+   "name": "cell0035.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.396,
+   "steps": 8,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0058.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.353,
+   "steps": 6,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0141.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.542,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0143.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.416,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0147.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.308,
+   "steps": 8,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0181.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.344,
+   "steps": 8,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0206.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.539,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0209.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.632,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0232.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.217,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0243.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.554,
+   "steps": 8,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0318.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.458,
+   "steps": 9,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0321.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.239,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0397.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.504,
+   "steps": 6,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0468.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.347,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0559.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.276,
+   "steps": 9,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0573.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.219,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0589.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.197,
+   "steps": 6,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0594.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.318,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0609.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.355,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0621.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.292,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0623.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.417,
+   "steps": 8,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0630.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.252,
+   "steps": 8,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0638.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.68,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0645.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.337,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0647.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.353,
+   "steps": 6,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0659.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.358,
+   "steps": 6,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0662.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.565,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0678.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.511,
+   "steps": 8,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0697.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.232,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0715.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.288,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0720.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.481,
+   "steps": 8,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0787.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.433,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0804.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.423,
+   "steps": 8,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0806.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.404,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0812.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.586,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0840.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.381,
+   "steps": 6,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0925.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.277,
+   "steps": 6,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell0969.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.348,
+   "steps": 8,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1018.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.394,
+   "steps": 8,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1024.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.176,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1045.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.433,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1051.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.51,
+   "steps": 8,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1053.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.399,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1065.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.571,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1071.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.751,
+   "steps": 8,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1079.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.436,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1104.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.614,
+   "steps": 6,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1105.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.584,
+   "steps": 6,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1132.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.372,
+   "steps": 5,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1143.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.515,
+   "steps": 8,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1179.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.665,
+   "steps": 8,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1221.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.511,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1282.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.379,
+   "steps": 6,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1330.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.531,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1361.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.665,
+   "steps": 8,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1400.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.297,
+   "steps": 6,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1408.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.582,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1409.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.512,
+   "steps": 6,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1449.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.504,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1462.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.354,
+   "steps": 8,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1470.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.614,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1472.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.451,
+   "steps": 6,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1487.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.491,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1819.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.334,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1820.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.257,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1882.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.191,
+   "steps": 6,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1906.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.262,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1955.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.61,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1959.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.54,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell1985.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.34,
+   "steps": 6,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell2015.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.567,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell2065.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.301,
+   "steps": 6,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell2074.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.505,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell2196.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.659,
+   "steps": 8,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell2204.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.297,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell2333.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.645,
+   "steps": 6,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell2402.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.281,
+   "steps": 7,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell2428.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.547,
+   "steps": 8,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  },
+  {
+   "name": "cell2512.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.207,
+   "steps": 6,
+   "by": "gemini-3.5-flash-lite",
+   "uncertain": true
+  }
+ ]
+}

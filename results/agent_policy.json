@@ -1,0 +1,5925 @@
+{
+ "brain": "policy",
+ "seconds": 16.1,
+ "summary": {
+  "cells": 655,
+  "auto_decided": 582,
+  "sent_to_human": 73,
+  "human_rate": 0.1115,
+  "auto_accuracy": 0.8883,
+  "auto_defects_caught": 117,
+  "auto_false_alarms": 11,
+  "auto_missed_defects": 54,
+  "defects_among_human_cases": 34,
+  "avg_steps_per_cell": 3.9
+ },
+ "llm_requests": 0,
+ "tool_calls": {
+  "check_quality": 655,
+  "enhance_image": 234,
+  "scan_cell": 655,
+  "locate_defect": 201,
+  "open_ticket": 128,
+  "mark_pass": 454,
+  "second_look": 79,
+  "inspect_region": 73,
+  "request_approval": 73
+ },
+ "per_cell": [
+  {
+   "name": "cell0012.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.992,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0018.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.996,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0023.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.99,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0026.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.979,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0027.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.952,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0032.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.156,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0035.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.396,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0038.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.998,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0044.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0050.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.985,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0057.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.996,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0058.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.547,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0060.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.037,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0075.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.057,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0077.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.924,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0089.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.761,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0090.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.066,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0093.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.112,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0095.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.02,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0097.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.015,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0101.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.068,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0107.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.017,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0109.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.092,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0110.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.067,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0111.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.138,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0116.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.022,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0120.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.041,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0123.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.044,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0128.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.062,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0130.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.165,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0137.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.049,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0140.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.084,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0141.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.542,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0143.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.416,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0147.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.308,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0149.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.097,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0150.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.053,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0154.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.072,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0163.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.072,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0166.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.051,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0168.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.075,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0169.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.03,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0173.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.037,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0176.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.099,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0180.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.042,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0181.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.344,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0183.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.192,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0186.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.089,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0189.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.207,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0190.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.231,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0193.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.087,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0195.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.172,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0196.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.996,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0197.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.116,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0202.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.162,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0206.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.539,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0209.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.632,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0220.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.134,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0222.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.03,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0225.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.032,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0232.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.217,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0239.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.157,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0241.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0243.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.554,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0248.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.966,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0251.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.933,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0255.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0258.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.07,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0262.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.121,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0265.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.991,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0267.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.179,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0273.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.036,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0280.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.095,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0286.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.916,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0289.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.067,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0298.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.147,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0304.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.052,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0314.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.219,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0318.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.458,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0321.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.239,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0322.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.152,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0323.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.073,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0327.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.025,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0335.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.107,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0338.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.027,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0345.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.057,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0363.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0369.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.013,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0370.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.992,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0371.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.998,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0373.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0375.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.991,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0380.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0382.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0383.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0385.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0397.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.504,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0403.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0408.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0412.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.998,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0416.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0431.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0434.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0438.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0446.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.883,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0456.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.124,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0459.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0460.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0461.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0464.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.992,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0468.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.347,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0470.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0476.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.846,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0477.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.996,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0484.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0492.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.994,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0493.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.993,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0500.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.021,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0502.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.952,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0503.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.021,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0505.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0511.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0513.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0514.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0515.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0517.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.963,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0520.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.998,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0523.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.998,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0524.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0525.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.993,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0527.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.983,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0528.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0529.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0534.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0536.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0538.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.102,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0543.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.111,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0555.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.135,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0558.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.045,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0559.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.276,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0567.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.194,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0568.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.15,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0571.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.13,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0573.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.219,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0577.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0583.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.865,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0584.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.823,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0589.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.197,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0593.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.155,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0594.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.318,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0598.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.203,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0607.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0609.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.355,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0613.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.975,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0616.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.936,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0617.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0621.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.292,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0623.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.417,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0630.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.252,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0633.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.203,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0638.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.68,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0639.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0641.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.998,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0643.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.881,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0645.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.337,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0647.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.353,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0657.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.194,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0659.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.358,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0662.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.565,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0674.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.979,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0678.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.511,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0679.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.153,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0686.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.982,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0697.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.232,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0699.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.988,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0703.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.859,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0715.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.288,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0720.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.481,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0725.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.022,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0726.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.012,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0730.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.039,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0733.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.023,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0736.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.042,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0740.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.065,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0742.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.194,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0753.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.161,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0769.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.068,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0771.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.056,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0773.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.066,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0774.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.013,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0779.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.009,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0781.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.105,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0782.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.993,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0787.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.433,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0788.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.995,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0794.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0797.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.097,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0804.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.423,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0806.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.404,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0812.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.586,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0814.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.072,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0818.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.06,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0830.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.021,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0834.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.984,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0835.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.065,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0837.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.146,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0840.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.426,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0843.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.084,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0850.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.12,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0853.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0862.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0863.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.997,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0866.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.079,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0867.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0872.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.825,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0881.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.984,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0882.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0890.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0895.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.166,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0903.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.057,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0904.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.05,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0906.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.07,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0925.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.277,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0931.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.122,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0934.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.077,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0937.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.232,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0939.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.065,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0941.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.13,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0944.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.207,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0947.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.121,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0952.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.048,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0953.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.062,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0957.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.106,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0960.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.081,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0961.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.052,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0964.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.051,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0967.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.11,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0969.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.316,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell0974.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.007,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0978.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.879,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0981.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.064,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell0999.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.045,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1000.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.008,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1002.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.098,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1004.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.058,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1013.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.021,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1014.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.015,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1017.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.029,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1018.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.394,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1019.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.142,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1024.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.176,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1025.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.845,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1028.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.157,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1033.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.928,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1042.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.074,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1044.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.205,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1045.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.433,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1047.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.045,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1049.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.02,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1051.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.51,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1053.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.399,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1057.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.973,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1065.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.571,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1071.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.751,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1072.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.016,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1079.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.436,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1083.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.129,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1088.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1090.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.111,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1100.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.068,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1104.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.614,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1105.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.584,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1108.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.998,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1110.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.249,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1113.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.112,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1115.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.093,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1129.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.193,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1130.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.179,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1132.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.452,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1135.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.073,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1137.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.081,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1138.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.064,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1143.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.515,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1153.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.008,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1155.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.004,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1167.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.004,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1170.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.003,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1179.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.665,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1185.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.059,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1191.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.192,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1192.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.011,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1194.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.028,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1195.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.066,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1196.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.025,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1199.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.008,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1200.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.004,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1201.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.003,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1202.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.065,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1204.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.224,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1206.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.002,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1218.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.003,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1219.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.772,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1221.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.511,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1222.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.032,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1229.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.003,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1233.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.076,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1237.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.002,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1238.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.006,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1239.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.013,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1240.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.008,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1241.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.031,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1254.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.011,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1271.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.043,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1278.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.227,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1279.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.104,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1282.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.244,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1283.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.146,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1285.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.092,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1291.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.123,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1292.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.059,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1298.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.104,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1302.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.22,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1303.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 5,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1309.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.139,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1311.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.217,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1312.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.06,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1315.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1317.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.045,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1318.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.035,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1324.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.067,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1330.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.531,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1337.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.06,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1347.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.053,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1358.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.113,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1361.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.665,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1364.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.111,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1370.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.052,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1371.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.246,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1372.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.216,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1380.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.093,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1384.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.163,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1386.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.906,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1388.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.214,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1393.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.227,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1397.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.098,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1400.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.297,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1408.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.582,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1409.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.512,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1417.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.921,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1419.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.897,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1420.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.924,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1433.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.243,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1439.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.933,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1440.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.971,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1444.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.049,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1445.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.215,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1448.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.817,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1449.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.504,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1459.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.179,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1460.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.205,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1462.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.354,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1464.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.053,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1468.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.996,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1470.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.614,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1472.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.451,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1473.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.113,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1481.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.216,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1484.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.075,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1486.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.246,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1487.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.491,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1488.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.04,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1491.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.172,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1494.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.859,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1499.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.017,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1506.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.002,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1523.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.015,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1527.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.01,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1536.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.038,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1537.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.002,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1545.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.014,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1546.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.01,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1551.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.007,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1554.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.008,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1562.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.072,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1565.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.048,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1575.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.002,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1576.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.005,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1585.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.003,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1588.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.007,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1589.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.034,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1590.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.045,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1591.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.018,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1597.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.004,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1603.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.022,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1607.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.002,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1613.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.003,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1614.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.003,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1619.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.075,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1627.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1628.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1634.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1636.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.047,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1640.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.127,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1643.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1645.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1656.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.215,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1657.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1669.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1675.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.151,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1679.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.153,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1681.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.02,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1685.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.065,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1695.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.028,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1696.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.011,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1706.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.211,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1708.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.012,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1711.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.079,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1712.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.018,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1714.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.027,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1715.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.04,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1718.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.053,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1719.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.048,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1720.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.052,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1724.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.131,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1725.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.242,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1726.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.068,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1729.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.99,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1730.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1733.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1734.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.061,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1744.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.004,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1752.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.147,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1753.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.009,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1755.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.034,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1759.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.008,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1766.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.067,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1768.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.126,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1770.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.062,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1774.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.021,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1776.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.032,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1777.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.015,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1783.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.008,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1784.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.19,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1785.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.027,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1786.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.051,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1787.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.187,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1794.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.039,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1799.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.13,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1801.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.065,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1804.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.078,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1811.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.004,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1819.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.334,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1820.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.257,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1831.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.06,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1833.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.041,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1839.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.223,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1846.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.216,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1850.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.025,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1853.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.03,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1862.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.195,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1865.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.025,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1871.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.029,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1872.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.011,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1875.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.018,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1876.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.158,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1878.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.013,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1880.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.034,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1882.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.191,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1885.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.047,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1888.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.067,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1889.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.02,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1891.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.05,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1893.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.011,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1898.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.03,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1902.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.114,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1904.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1906.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.262,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1907.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.222,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1908.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.042,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1917.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.007,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1918.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.832,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1922.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.009,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1925.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.142,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1928.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.1,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1929.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.13,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1937.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.016,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1941.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.059,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1943.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.091,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1948.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.026,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1950.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.924,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1951.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.151,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1955.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.61,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1959.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.54,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1965.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.068,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1972.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.085,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1974.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.049,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1977.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.071,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1981.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.14,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell1985.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.34,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell1987.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.22,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2000.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.026,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2005.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.16,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2007.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.195,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2013.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.04,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2015.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.567,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell2019.png",
+   "y": 0,
+   "decision": "fail",
+   "score": 0.918,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2021.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.039,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2024.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.061,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2027.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.041,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2032.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.089,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2041.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.092,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2046.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.086,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2051.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.997,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2054.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.089,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2060.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.089,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2065.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.301,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell2067.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.065,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2071.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2073.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.058,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2074.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.505,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell2083.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.197,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2084.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.106,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2085.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.05,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2087.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.046,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2088.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.032,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2090.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.031,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2098.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.03,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2099.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.025,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2103.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.026,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2104.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.03,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2105.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.064,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2107.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.007,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2110.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.009,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2114.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.017,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2117.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.206,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2134.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.033,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2145.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.034,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2147.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.047,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2148.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.061,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2149.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.044,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2153.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.069,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2160.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.079,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2164.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.036,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2166.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.136,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2170.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.032,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2174.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.062,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2180.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.075,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2184.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.039,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2191.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.056,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2196.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.659,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell2198.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.058,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2201.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.079,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2203.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.053,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2204.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.421,
+   "steps": 7,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell2208.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.061,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2210.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.094,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2218.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.006,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2221.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.01,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2231.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.002,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2239.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.019,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2241.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.007,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2245.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.04,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2248.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.002,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2251.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.003,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2254.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.001,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2256.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.001,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2265.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.006,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2272.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.003,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2273.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.009,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2276.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.001,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2285.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.163,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2290.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.215,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2297.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.022,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2301.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.027,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2302.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.114,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2304.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.051,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2309.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.005,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2312.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.075,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2313.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.056,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2314.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.044,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2316.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.049,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2318.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.023,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2323.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.248,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2328.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.999,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2330.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.996,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2332.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.812,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2333.png",
+   "y": 1,
+   "decision": "human",
+   "score": 0.645,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell2341.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.032,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2343.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.059,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2348.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.058,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2352.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.162,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2353.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.04,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2356.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.049,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2359.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.002,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2366.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.012,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2370.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.19,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2380.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.031,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2385.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.063,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2386.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.016,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2390.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.111,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2392.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.785,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2398.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.033,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2401.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.097,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2402.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.281,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell2412.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.041,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2413.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.07,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2427.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.106,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2428.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.547,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell2434.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.038,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2435.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.055,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2445.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.052,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2446.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.893,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2449.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.048,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2451.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.021,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2457.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.078,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2458.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.02,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2471.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.106,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2473.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.041,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2483.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.089,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2485.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.049,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2491.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.008,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2494.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.013,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2501.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.069,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2503.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.173,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2508.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.147,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2512.png",
+   "y": 0,
+   "decision": "human",
+   "score": 0.207,
+   "steps": 6,
+   "by": "rules",
+   "uncertain": true
+  },
+  {
+   "name": "cell2514.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.025,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2520.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.01,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2526.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.205,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2534.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.057,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2537.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.027,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2538.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 1.0,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2542.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.022,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2545.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.107,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2547.png",
+   "y": 1,
+   "decision": "fail",
+   "score": 0.997,
+   "steps": 4,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2548.png",
+   "y": 1,
+   "decision": "pass",
+   "score": 0.041,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2550.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.027,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2553.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.079,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2556.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.135,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2557.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.086,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2563.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.103,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2564.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.03,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2565.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.049,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2571.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.082,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2572.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.124,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2575.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.034,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2576.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.102,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2580.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.023,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2595.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.06,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2598.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.04,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2601.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.038,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2609.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.09,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2615.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.085,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2617.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.054,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  },
+  {
+   "name": "cell2622.png",
+   "y": 0,
+   "decision": "pass",
+   "score": 0.023,
+   "steps": 3,
+   "by": "rules",
+   "uncertain": false
+  }
+ ]
+}

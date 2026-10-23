@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>InspectorMCP</title>
+<meta name="description" content="An agent that inspects solar cells with OpenCV 5 (COOL) on AWS Graviton - it looks, decides, looks closer when unsure, and acts.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111110'/%3E%3Cg fill='%233f3e3a'%3E%3Crect x='6' y='6' width='5.5' height='5.5' rx='1.2'/%3E%3Crect x='13.25' y='6' width='5.5' height='5.5' rx='1.2'/%3E%3Crect x='20.5' y='6' width='5.5' height='5.5' rx='1.2'/%3E%3Crect x='6' y='13.25' width='5.5' height='5.5' rx='1.2'/%3E%3Crect x='20.5' y='13.25' width='5.5' height='5.5' rx='1.2'/%3E%3Crect x='6' y='20.5' width='5.5' height='5.5' rx='1.2'/%3E%3Crect x='13.25' y='20.5' width='5.5' height='5.5' rx='1.2'/%3E%3Crect x='20.5' y='20.5' width='5.5' height='5.5' rx='1.2'/%3E%3C/g%3E%3Crect x='13.25' y='13.25' width='5.5' height='5.5' rx='1.2' fill='%23e8590c'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#fbfaf7">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fbfaf7; --paper: #ffffff; --soft: #f3f2ee; --soft2: #e9e7e1; --ink: #111110; --ink2: #3b3a36; --muted: #7a7870; --line: #e6e3dc;
+  --sun: #e8590c; --sun-soft: #fff1e8;
+  --pass: #15803d; --fail: #e11d48; --human: #d97706;
+  --pass-a: rgba(21,128,61,.30); --fail-a: rgba(225,29,72,.36); --human-a: rgba(217,119,6,.36);
+  --r-xl: 30px; --r-lg: 22px; --r-md: 14px;
+  --shadow: 0 1px 2px rgba(17,17,16,.04), 0 10px 30px rgba(17,17,16,.06);
+  --shadow-lg: 0 2px 6px rgba(17,17,16,.05), 0 30px 80px rgba(17,17,16,.12);
+  --ease: cubic-bezier(.22,1,.36,1);
+  --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --serif: "Instrument Serif", ui-serif, Georgia, serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+em.s { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: -.01em; }
+
+/* ---------- nav ---------- */
+nav { position: sticky; top: 0; z-index: 40; transition: background .3s var(--ease), border-color .3s var(--ease); border-bottom: 1px solid transparent; }
+nav.scrolled { background: rgba(251,250,247,.82); backdrop-filter: saturate(1.5) blur(14px); -webkit-backdrop-filter: saturate(1.5) blur(14px); border-color: var(--line); }
+.nav-in { display: flex; align-items: center; gap: 34px; height: 72px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: -.02em; font-size: 16px; }
+.mark { width: 28px; height: 28px; border-radius: 8px; background: var(--ink); display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; padding: 5px; }
+.mark i { border-radius: 2px; background: #3a3a37; } .mark i.hot { background: var(--sun); animation: blinkhot 3s ease-in-out infinite; }
+@keyframes blinkhot { 50% { background: #ffb38a; } }
+.links { display: flex; gap: 26px; color: var(--muted); font-size: 14.5px; }
+.links a { position: relative; transition: color .2s; }
+.links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 1px; background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease); }
+.links a:hover { color: var(--ink); } .links a:hover::after { transform: scaleX(1); }
+.nav-right { margin-left: auto; display: flex; gap: 10px; align-items: center; }
+
+/* ---------- buttons ---------- */
+.btn { display: inline-flex; align-items: center; gap: 10px; border-radius: 999px; padding: 12px 22px; border: 1px solid transparent; cursor: pointer; font-weight: 550; letter-spacing: -.01em; transition: transform .3s var(--ease), background .25s, border-color .25s, box-shadow .3s var(--ease), opacity .2s; white-space: nowrap; }
+.btn:hover { transform: translateY(-1px); } .btn:active { transform: scale(.98); }
+.btn.ink { background: var(--ink); color: #fff; }
+.btn.ink:hover { box-shadow: 0 12px 28px rgba(17,17,16,.22); }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn.ghost:hover { border-color: var(--ink); background: var(--paper); }
+.btn.soft { background: var(--soft); color: var(--ink); } .btn.soft:hover { background: var(--soft2); }
+.btn.sm { padding: 8px 15px; font-size: 14px; }
+.btn:disabled { opacity: .4; cursor: default; transform: none; box-shadow: none; }
+.btn .ar { display: inline-block; transition: transform .3s var(--ease); } .btn:hover .ar { transform: translateX(3px); }
+
+/* ---------- hero ---------- */
+.hero { position: relative; padding: 70px 0 30px; }
+.gridbg { position: absolute; inset: -72px 0 0; z-index: -1; pointer-events: none;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 56px 56px; mask-image: radial-gradient(ellipse 70% 60% at 70% 30%, #000 10%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 70% 60% at 70% 30%, #000 10%, transparent 70%); opacity: .55; }
+.hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
+.eyebrow { display: inline-flex; align-items: center; gap: 9px; font-size: 13px; color: var(--ink2); border: 1px solid var(--line); background: var(--paper); border-radius: 999px; padding: 6px 13px 6px 10px; }
+.live { width: 7px; height: 7px; border-radius: 50%; background: var(--pass); animation: ping 2.2s infinite; }
+@keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(21,128,61,.45); } 70% { box-shadow: 0 0 0 8px rgba(21,128,61,0); } 100% { box-shadow: 0 0 0 0 rgba(21,128,61,0); } }
+h1 { font-size: clamp(44px, 6vw, 80px); line-height: .98; letter-spacing: -.05em; font-weight: 600; margin: 26px 0 0; }
+h1 .ln { display: block; overflow: hidden; padding-bottom: .06em; }
+h1 .ln > span { display: inline-block; transform: translateY(105%); animation: up 1s var(--ease) forwards; }
+h1 em.s { font-size: 1.08em; letter-spacing: -.02em; color: var(--sun); }
+@keyframes up { to { transform: none; } }
+.fade { opacity: 0; transform: translateY(14px); animation: fadeup .9s var(--ease) forwards; }
+@keyframes fadeup { to { opacity: 1; transform: none; } }
+.lede { color: var(--muted); font-size: 18px; max-width: 470px; margin: 24px 0 0; }
+.cta { display: flex; gap: 10px; margin-top: 32px; flex-wrap: wrap; }
+.meta { display: flex; gap: 28px; margin-top: 38px; padding-top: 22px; border-top: 1px solid var(--line); max-width: 470px; }
+.meta div { font-size: 13px; color: var(--muted); }
+.meta b { display: block; color: var(--ink); font-size: 22px; font-weight: 600; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+
+/* hero visual: a live mini panel */
+.vis { position: relative; opacity: 0; animation: fadeup 1.2s var(--ease) .5s forwards; }
+.vis-card { position: relative; background: linear-gradient(160deg, #1b1b19, #0e0e0d 60%); border-radius: var(--r-xl); padding: 16px 16px 14px; box-shadow: var(--shadow-lg), inset 0 0 0 1px rgba(255,255,255,.06); transform: rotate(-1.4deg); transition: transform .9s var(--ease); overflow: hidden; }
+.vis-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,.06) 50%, transparent 65%); transform: translateX(-100%); animation: sheen 7s ease-in-out infinite; pointer-events: none; }
+@keyframes sheen { 0%, 60% { transform: translateX(-100%); } 85%, 100% { transform: translateX(100%); } }
+.vis:hover .vis-card { transform: rotate(0) translateY(-4px); }
+.vis-top { display: flex; justify-content: space-between; align-items: center; color: #8a8880; font: 12px var(--mono); margin: 2px 4px 12px; }
+.vis-top .rec { display: inline-flex; align-items: center; gap: 8px; }
+.vis-top .rec::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--fail); box-shadow: 0 0 10px var(--fail); animation: rec 1.4s steps(1) infinite; }
+@keyframes rec { 50% { opacity: .25; } }
+.vis-top b { color: #f4f3ef; font-weight: 500; }
+.mp { position: relative; border-radius: 12px; overflow: hidden; background: #0a0a09; }
+.mp img { display: block; width: 100%; height: auto; filter: contrast(1.05) brightness(.96); }
+.mcell { position: absolute; border-radius: 3px; transition: background .6s var(--ease), box-shadow .6s var(--ease); }
+.mcell.p { background: rgba(21,128,61,.22); }
+.mcell.f { background: rgba(225,29,72,.30); box-shadow: inset 0 0 0 2px #fb7185; }
+.mcell.h { background: rgba(217,119,6,.32); box-shadow: inset 0 0 0 2px #fbbf24; }
+.mcell .bdg { position: absolute; right: 6%; top: 6%; width: 22%; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; color: #fff; font: 700 clamp(8px, 1vw, 12px)/1 var(--sans); transform: scale(0); transition: transform .5s cubic-bezier(.34,1.56,.64,1); box-shadow: 0 2px 6px rgba(0,0,0,.35); }
+.mcell.p .bdg { background: var(--pass); transform: scale(1); } .mcell.f .bdg { background: var(--fail); transform: scale(1); } .mcell.h .bdg { background: var(--human); transform: scale(1); }
+.mcell.p .bdg::before { content: "✓"; } .mcell.f .bdg::before { content: "✕"; } .mcell.h .bdg::before { content: "?"; }
+.reticle { position: absolute; pointer-events: none; transition: left .45s var(--ease), top .45s var(--ease), opacity .3s; }
+.reticle i { position: absolute; width: 22%; height: 22%; border: 2px solid #fff; filter: drop-shadow(0 0 6px rgba(255,184,138,.9)); }
+.reticle i:nth-child(1) { left: -4%; top: -4%; border-right: 0; border-bottom: 0; border-top-left-radius: 5px; }
+.reticle i:nth-child(2) { right: -4%; top: -4%; border-left: 0; border-bottom: 0; border-top-right-radius: 5px; }
+.reticle i:nth-child(3) { left: -4%; bottom: -4%; border-right: 0; border-top: 0; border-bottom-left-radius: 5px; }
+.reticle i:nth-child(4) { right: -4%; bottom: -4%; border-left: 0; border-top: 0; border-bottom-right-radius: 5px; }
+.reticle.lock i { border-color: #ffb38a; animation: lock .5s var(--ease) 2; }
+@keyframes lock { 50% { transform: scale(.82); } }
+.reticle .scan { position: absolute; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, #ffb38a, transparent); box-shadow: 0 0 12px 2px rgba(255,140,80,.7); animation: scanv 1s ease-in-out infinite alternate; }
+@keyframes scanv { from { top: 4%; } to { top: 94%; } }
+.vis-foot { display: flex; align-items: center; gap: 16px; margin: 12px 4px 2px; color: #a8a69e; font: 12px var(--mono); }
+.vis-foot b { color: #f4f3ef; font-weight: 500; font-variant-numeric: tabular-nums; }
+.vis-foot .d { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; }
+.prog { flex: 1; height: 3px; border-radius: 3px; background: #2a2a27; overflow: hidden; }
+.prog i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, #ffb38a, var(--sun)); border-radius: inherit; transition: width .35s var(--ease); }
+.toast { position: absolute; left: -30px; bottom: -34px; width: 280px; background: rgba(255,255,255,.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 16px; box-shadow: var(--shadow-lg), inset 0 0 0 1px rgba(17,17,16,.05); padding: 12px 14px; font: 12px/1.65 var(--mono); color: var(--ink2); animation: bob 6s ease-in-out infinite; }
+@keyframes bob { 50% { transform: translateY(-6px); } }
+.toast .who { font-family: var(--sans); font-weight: 600; font-size: 12px; color: var(--ink); display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+.toast .who i { width: 6px; height: 6px; border-radius: 50%; background: var(--sun); }
+.toast .who span { margin-left: auto; font: 11px var(--mono); color: var(--muted); font-weight: 400; }
+.toast .line { opacity: 0; transform: translateY(4px); transition: opacity .35s var(--ease), transform .35s var(--ease); }
+.toast .line.show { opacity: 1; transform: none; }
+.toast .ok { color: var(--pass); } .toast .bad { color: var(--fail); }
+
+/* ---------- section scaffolding ---------- */
+section.block { padding: 130px 0 0; }
+.kicker { font: 500 12.5px var(--mono); color: var(--sun); letter-spacing: .02em; text-transform: uppercase; }
+h2 { font-size: clamp(32px, 4.2vw, 54px); line-height: 1.02; letter-spacing: -.045em; font-weight: 600; margin: 14px 0 0; max-width: 16ch; }
+.sub { color: var(--muted); font-size: 17px; max-width: 520px; margin: 16px 0 0; }
+.head-row { display: flex; justify-content: space-between; align-items: end; gap: 30px; flex-wrap: wrap; }
+
+/* ---------- console window ---------- */
+.window { margin-top: 44px; border-radius: var(--r-xl); background: var(--soft); padding: 10px; box-shadow: var(--shadow-lg); }
+.win-in { background: var(--paper); border-radius: 22px; overflow: hidden; border: 1px solid var(--line); }
+.win-bar { display: flex; align-items: center; gap: 14px; padding: 12px 18px; border-bottom: 1px solid var(--line); }
+.dots { display: flex; gap: 6px; } .dots i { width: 10px; height: 10px; border-radius: 50%; background: var(--soft2); display: block; }
+.win-title { font: 12.5px var(--mono); color: var(--muted); }
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 14px 18px; border-bottom: 1px solid var(--line); }
+.field { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+.num { width: 52px; font: 500 14px var(--sans); text-align: center; color: var(--ink); background: var(--soft); border: 1px solid transparent; border-radius: 10px; padding: 7px 4px; transition: border-color .2s, background .2s; }
+.num:focus { outline: none; border-color: var(--ink); background: var(--paper); }
+.upload { position: relative; overflow: hidden; } .upload input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.seg { position: relative; display: inline-flex; background: var(--soft); border-radius: 999px; padding: 4px; }
+.seg button { position: relative; z-index: 1; border: 0; background: none; padding: 7px 14px; border-radius: 999px; cursor: pointer; color: var(--muted); font-size: 14px; font-weight: 500; transition: color .25s; }
+.seg button.on { color: var(--ink); } .seg button:disabled { opacity: .4; cursor: default; }
+.seg .knob { position: absolute; top: 4px; bottom: 4px; left: 4px; border-radius: 999px; background: var(--paper); box-shadow: 0 1px 3px rgba(17,17,16,.14); transition: transform .45s var(--ease), width .45s var(--ease); }
+.tb-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.msg { color: var(--fail); font-size: 13px; }
+.stage { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); min-height: 520px; }
+.viewer-col { padding: 18px; border-right: 1px solid var(--line); }
+.feed-col { display: flex; flex-direction: column; min-height: 0; }
+.col-h { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px 10px; font-size: 13px; font-weight: 600; }
+.col-h .c { font-weight: 400; color: var(--muted); font: 12px var(--mono); }
+.placeholder { min-height: 430px; border-radius: var(--r-md); background: repeating-linear-gradient(135deg, var(--soft) 0 12px, #f6f5f1 12px 24px); display: grid; place-items: center; text-align: center; color: var(--muted); padding: 24px; }
+.placeholder b { display: block; color: var(--ink); font-size: 18px; margin-bottom: 4px; letter-spacing: -.02em; font-weight: 600; }
+.viewer { position: relative; border-radius: var(--r-md); overflow: hidden; background: #0b0b0a; animation: pop .6s var(--ease); }
+@keyframes pop { from { opacity: 0; transform: scale(.985); } to { opacity: 1; transform: none; } }
+.viewer img { display: block; width: 100%; height: auto; }
+.overlay { position: absolute; inset: 0; display: grid; }
+.cellbox { position: relative; cursor: pointer; transition: background .5s var(--ease), box-shadow .5s var(--ease); }
+.cellbox:hover { box-shadow: inset 0 0 0 2px rgba(255,255,255,.55); }
+.cellbox.busy { box-shadow: inset 0 0 0 2px #fff; overflow: hidden; }
+.cellbox.busy::after { content: ""; position: absolute; left: 0; right: 0; height: 45%; background: linear-gradient(180deg, rgba(255,184,138,0), rgba(255,184,138,.42), rgba(255,184,138,0)); animation: scan 1s linear infinite; }
+@keyframes scan { from { top: -45%; } to { top: 100%; } }
+.cellbox.pass { background: var(--pass-a); } .cellbox.fail { background: var(--fail-a); box-shadow: inset 0 0 0 2px var(--fail); } .cellbox.human { background: var(--human-a); box-shadow: inset 0 0 0 2px var(--human); }
+.cellbox .tag { position: absolute; left: 6px; bottom: 5px; font: 500 11px var(--mono); color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.8); opacity: 0; transition: opacity .3s; }
+.cellbox.pass .tag, .cellbox.fail .tag, .cellbox.human .tag { opacity: 1; }
+.legend { display: flex; gap: 16px; margin-top: 12px; font-size: 13px; color: var(--muted); flex-wrap: wrap; align-items: center; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 7px; }
+.dot.pass { background: var(--pass); } .dot.fail { background: var(--fail); } .dot.human { background: var(--human); }
+.feed { flex: 1; overflow-y: auto; padding: 0 18px 18px; display: flex; flex-direction: column; gap: 6px; max-height: 560px; font-size: 13px; }
+.feed .ph { color: var(--muted); padding: 16px; background: var(--soft); border-radius: var(--r-md); }
+.step { padding: 9px 12px; border-radius: 12px; background: var(--soft); animation: slide .45s var(--ease); }
+@keyframes slide { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.step .t { font-family: var(--mono); font-weight: 500; } .step .a { color: var(--muted); font: 12px var(--mono); }
+.step .why { color: var(--ink2); margin-top: 2px; }
+.step .ms { float: right; color: var(--muted); font: 11px var(--mono); }
+.step.cell { background: none; padding: 12px 2px 2px; font-weight: 600; }
+.step.llm { background: var(--sun-soft); } .step.llm .who { color: var(--sun); font-weight: 600; }
+.step.decision { background: none; padding: 4px 2px 6px; }
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.badge.pass { background: rgba(21,128,61,.10); color: var(--pass); } .badge.fail { background: rgba(225,29,72,.10); color: var(--fail); } .badge.human { background: rgba(217,119,6,.12); color: #b45309; }
+.results { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1px; background: var(--line); border-top: 1px solid var(--line); }
+.res { background: var(--paper); padding: 16px 18px; animation: slide .5s var(--ease); }
+.res .v { font-size: 26px; font-weight: 600; letter-spacing: -.035em; font-variant-numeric: tabular-nums; }
+.res .k { color: var(--muted); font-size: 12px; }
+.res .v.pass { color: var(--pass); } .res .v.fail { color: var(--fail); } .res .v.human { color: var(--human); }
+.results .ph { grid-column: 1 / -1; background: var(--paper); padding: 16px 18px; color: var(--muted); font-size: 13px; }
+
+/* ---------- numbers ---------- */
+.numbers { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 54px; border-top: 1px solid var(--ink); }
+.n { padding: 26px 26px 0 0; border-right: 1px solid var(--line); margin-right: 26px; }
+.n:last-child { border-right: 0; margin-right: 0; }
+.n .big { font-size: clamp(44px, 5vw, 68px); font-weight: 600; letter-spacing: -.055em; line-height: 1; font-variant-numeric: tabular-nums; }
+.n .big em.s { font-size: .6em; color: var(--muted); margin-left: 2px; }
+.n .lbl { margin-top: 14px; font-weight: 550; }
+.n .note { color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+/* ---------- how it works (editorial list) ---------- */
+.how { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; margin-top: 10px; }
+.how-left { position: sticky; top: 110px; align-self: start; }
+.loop { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 8px; }
+.loop span { font: 13px var(--mono); padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--paper); }
+.loop span.hl { background: var(--ink); color: #fff; border-color: var(--ink); }
+.steps { border-top: 1px solid var(--line); }
+.st { display: grid; grid-template-columns: 56px 1fr 120px; gap: 22px; align-items: center; padding: 26px 0; border-bottom: 1px solid var(--line); transition: padding .4s var(--ease); }
+.st:hover { padding-left: 8px; }
+.st .no { font: 13px var(--mono); color: var(--muted); }
+.st h3 { margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -.025em; }
+.st p { margin: 4px 0 0; color: var(--muted); font-size: 14.5px; }
+.st code { font: 12px var(--mono); color: var(--sun); }
+.ill { height: 76px; border-radius: 14px; background: var(--paper); border: 1px solid var(--line); position: relative; overflow: hidden; display: grid; place-items: center; }
+.ill .bars { position: absolute; inset: 0; background: linear-gradient(transparent 32%, var(--soft2) 32% 38%, transparent 38% 62%, var(--soft2) 62% 68%, transparent 68%); }
+.ill .sweep { position: absolute; top: 0; bottom: 0; width: 35%; background: linear-gradient(90deg, transparent, rgba(232,89,12,.18), transparent); animation: beam 2.8s ease-in-out infinite; }
+.ill .meter { width: 80px; height: 8px; border-radius: 99px; background: var(--soft); overflow: hidden; }
+.ill .meter i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--pass), var(--human), var(--fail)); border-radius: inherit; transition: width 1.2s var(--ease); }
+.st.in .ill .meter i { width: 68%; }
+.ill .tri { display: grid; grid-template-columns: repeat(3, 18px); gap: 5px; }
+.ill .tri i { width: 18px; height: 18px; border-radius: 5px; background: var(--soft2); transition: transform .6s var(--ease); }
+.st:hover .tri i:nth-child(2) { transform: rotate(180deg); } .st:hover .tri i:nth-child(3) { transform: scaleX(-1) translateY(-4px); }
+.ill .hm { display: grid; grid-template-columns: repeat(3, 14px); gap: 4px; }
+.ill .hm i { width: 14px; height: 14px; border-radius: 4px; background: var(--soft2); }
+.ill .hm i.hot { background: var(--fail); animation: glow 1.8s ease-in-out infinite; }
+@keyframes glow { 50% { box-shadow: 0 0 0 5px rgba(225,29,72,.15); } }
+.ill .lens { width: 46px; height: 46px; border-radius: 50%; background: radial-gradient(circle at 40% 40%, #5c5a54, #1c1c1a); position: relative; overflow: hidden; box-shadow: 0 0 0 4px var(--paper), 0 0 0 5px var(--line); transition: transform .5s var(--ease); }
+.ill .lens::after { content: ""; position: absolute; width: 2px; height: 60px; background: var(--fail); left: 46%; top: -6px; transform: rotate(24deg); }
+.st:hover .ill .lens { transform: scale(1.15); }
+.ill .acts { display: flex; gap: 5px; } .ill .acts i { width: 22px; height: 22px; border-radius: 50%; }
+.ill .acts i:nth-child(1) { background: var(--pass); } .ill .acts i:nth-child(2) { background: var(--fail); } .ill .acts i:nth-child(3) { background: var(--human); }
+
+/* ---------- human in control ---------- */
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 44px; }
+.pc { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 22px; }
+.pc h3 { margin: 0 0 16px; font-size: 16px; font-weight: 600; letter-spacing: -.015em; display: flex; justify-content: space-between; align-items: center; }
+.count { font: 500 12px var(--mono); color: var(--muted); background: var(--soft); border-radius: 999px; padding: 3px 10px; }
+.approvals, .tickets { display: grid; gap: 10px; }
+.appr { display: grid; grid-template-columns: 84px 1fr; gap: 14px; border-radius: var(--r-md); padding: 10px; background: var(--soft); animation: slide .45s var(--ease); }
+.appr img { width: 84px; height: 84px; border-radius: 10px; object-fit: cover; }
+.appr .title { font-weight: 600; font-size: 14px; }
+.appr .reason { color: var(--muted); font-size: 13px; margin: 3px 0 8px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.appr .row { display: flex; gap: 8px; }
+.empty { color: var(--muted); font-size: 14px; border: 1px dashed var(--line); border-radius: var(--r-md); padding: 22px; text-align: center; }
+.ticket { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center; border-radius: var(--r-md); padding: 12px 14px; background: var(--soft); animation: slide .45s var(--ease); }
+.ticket .id { font: 500 12px var(--mono); color: var(--muted); }
+.ticket .what { font-size: 14px; font-weight: 550; }
+.ticket .ev { color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 340px; }
+
+/* ---------- MCP (dark) ---------- */
+.dark { background: #121211; color: #f4f3ef; border-radius: 36px; padding: 70px 60px; margin-top: 130px; display: grid; grid-template-columns: 1fr 1.05fr; gap: 50px; align-items: center; position: relative; overflow: hidden; }
+.dark::before { content: ""; position: absolute; width: 520px; height: 520px; right: -160px; top: -200px; background: radial-gradient(circle, rgba(232,89,12,.28), transparent 65%); pointer-events: none; }
+.dark .kicker { color: #ffa877; } .dark h2 { color: #fff; } .dark .sub { color: #a8a69e; }
+.code { margin-top: 26px; background: #1d1d1b; border: 1px solid #2c2c29; border-radius: var(--r-md); padding: 14px 16px; font: 13px/1.6 var(--mono); color: #d6d4cc; overflow-x: auto; white-space: nowrap; }
+.code .p { color: #ffa877; }
+.dark .row { display: flex; gap: 10px; margin-top: 18px; align-items: center; flex-wrap: wrap; }
+.dark .btn.ink { background: #fff; color: var(--ink); }
+.chip { font: 12px var(--mono); color: #a8a69e; border: 1px solid #34342f; border-radius: 999px; padding: 4px 10px; }
+.chat { position: relative; background: #1a1a18; border: 1px solid #2c2c29; border-radius: 24px; padding: 24px; min-height: 340px; display: flex; flex-direction: column; gap: 10px; justify-content: center; }
+.bubble { max-width: 88%; padding: 11px 14px; border-radius: 16px; font-size: 14px; background: #262623; color: #ecebe6; opacity: 0; transform: translateY(8px); transition: opacity .5s var(--ease), transform .5s var(--ease); }
+.bubble.me { align-self: flex-end; background: #fff; color: var(--ink); }
+.bubble.tool { font: 12px var(--mono); color: #a8a69e; background: transparent; border: 1px solid #2f2f2b; }
+.bubble.show { opacity: 1; transform: none; }
+.caret { display: inline-block; width: 7px; height: 15px; background: currentColor; vertical-align: -2px; margin-left: 2px; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ---------- sheet ---------- */
+.scrim { position: fixed; inset: 0; background: rgba(17,17,16,.3); opacity: 0; pointer-events: none; transition: opacity .35s var(--ease); z-index: 60; }
+.scrim.open { opacity: 1; pointer-events: auto; }
+.sheet { position: fixed; top: 12px; right: 12px; bottom: 12px; width: min(440px, calc(100vw - 24px)); background: var(--paper); border-radius: 24px; box-shadow: var(--shadow-lg); transform: translateX(112%); transition: transform .55s var(--ease); z-index: 61; display: flex; flex-direction: column; overflow: hidden; }
+.sheet.open { transform: none; }
+.sheet-h { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px; border-bottom: 1px solid var(--line); font-weight: 600; }
+.x { width: 32px; height: 32px; border-radius: 50%; border: 0; background: var(--soft); cursor: pointer; font-size: 18px; line-height: 1; transition: transform .3s var(--ease); }
+.x:hover { transform: rotate(90deg); }
+.sheet-b { padding: 16px 18px; overflow-y: auto; display: grid; gap: 8px; }
+.sheet-b img { width: 100%; border-radius: var(--r-md); background: #0b0b0a; }
+
+footer { margin-top: 90px; padding: 28px 0 44px; color: var(--muted); font-size: 13px; }
+.foot { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 24px; }
+
+/* ---------- reveal ---------- */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+.d1 { transition-delay: .08s; } .d2 { transition-delay: .16s; } .d3 { transition-delay: .24s; }
+
+@media (max-width: 980px) {
+  .hero-grid, .how, .two, .dark { grid-template-columns: 1fr; }
+  .how-left { position: static; } .vis { max-width: 520px; } .toast { left: 10px; }
+  .stage { grid-template-columns: 1fr; } .viewer-col { border-right: 0; border-bottom: 1px solid var(--line); }
+  .numbers { grid-template-columns: 1fr 1fr; } .n:nth-child(2) { border-right: 0; margin-right: 0; }
+  .links { display: none; } .dark { padding: 44px 26px; }
+}
+@media (max-width: 600px) {
+  .wrap { padding: 0 16px; } .hero { padding-top: 40px; } .meta { gap: 18px; }
+  .st { grid-template-columns: 34px 1fr; } .st .ill { display: none; }
+  .tb-right { margin-left: 0; width: 100%; } .tb-right .btn { flex: 1; justify-content: center; }
+  .nav-right .btn.ghost { display: none; } .toast { position: relative; left: 0; bottom: 0; width: auto; margin-top: 12px; }
+  .vis-card { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+  h1 .ln > span, .fade, .vis, .reveal { opacity: 1 !important; transform: none !important; }
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top"><span class="mark"><i></i><i></i><i></i><i></i><i class="hot"></i><i></i><i></i><i></i><i></i></span>InspectorMCP</a>
+    <div class="links"><a href="#console">Console</a><a href="#how">How it works</a><a href="#results">Results</a><a href="#mcp">MCP</a></div>
+    <div class="nav-right">
+      <a class="btn ghost sm" href="#mcp">Connect MCP</a>
+      <button class="btn ink sm" id="navTry">Run inspection</button>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+  <header class="hero">
+    <div class="gridbg"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow fade" style="animation-delay:.05s"><span class="live"></span>Live · OpenCV 5 (COOL) on AWS Graviton</div>
+        <h1>
+          <span class="ln"><span style="animation-delay:.12s">Every crack,</span></span>
+          <span class="ln"><span style="animation-delay:.24s">caught <em class="s">before</em></span></span>
+          <span class="ln"><span style="animation-delay:.36s">it costs.</span></span>
+        </h1>
+        <p class="lede fade" style="animation-delay:.55s">An inspection agent for solar panels. It scans every cell, takes a closer look when it isn't sure — then opens a repair ticket or asks you.</p>
+        <div class="cta fade" style="animation-delay:.68s">
+          <button class="btn ink" id="quickBtn">Run a live inspection <span class="ar">→</span></button>
+          <a class="btn ghost" href="#how">See how it works</a>
+        </div>
+        <div class="meta fade" style="animation-delay:.8s">
+          <div><b>87%</b>accuracy</div><div><b>99</b>cells / second</div><div><b>2 ms</b>per model call</div>
+        </div>
+      </div>
+      <div class="vis" aria-hidden="true">
+        <div class="vis-card">
+          <div class="vis-top"><span class="rec">live inspection · panel-07</span><span><b id="visCount">0</b> / 24 cells</span></div>
+          <div class="mp" id="mp">
+            <img src="/assets/hero-panel.webp" alt="" width="1104" height="737">
+            <div class="reticle" id="reticle"><i></i><i></i><i></i><i></i><span class="scan"></span></div>
+          </div>
+          <div class="vis-foot">
+            <span><span class="d" style="background:var(--pass)"></span><b id="vp">0</b> fine</span>
+            <span><span class="d" style="background:var(--fail)"></span><b id="vf">0</b> defect</span>
+            <span><span class="d" style="background:var(--human)"></span><b id="vh">0</b> review</span>
+            <span class="prog"><i id="vprog"></i></span>
+          </div>
+        </div>
+        <div class="toast" id="toast"><div class="who"><i></i>agent<span id="toastStep">step 0</span></div><div id="toastLines"></div></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="block wrap" id="console">
+    <div class="head-row">
+      <div><div class="kicker reveal">Console</div><h2 class="reveal d1">Try it on a <em class="s">real</em> panel.</h2></div>
+      <p class="sub reveal d2">Demo panels are built from real electroluminescence photos. Pick a brain, press Inspect, and watch every step.</p>
+    </div>
+    <div class="window reveal">
+      <div class="win-in">
+        <div class="win-bar"><div class="dots"><i></i><i></i><i></i></div><span class="win-title">inspector — console</span><span class="win-title" id="build" style="margin-left:auto"></span></div>
+        <div class="toolbar">
+          <div class="field">Panel <input class="num" type="number" id="rows" value="4" min="1" max="8" aria-label="rows"> × <input class="num" type="number" id="cols" value="6" min="1" max="12" aria-label="columns"></div>
+          <button class="btn soft sm" id="demoBtn">New demo panel</button>
+          <label class="btn soft sm upload">Upload EL image<input type="file" id="file" accept="image/*"></label>
+          <div class="seg" role="group" aria-label="agent brain"><span class="knob" id="knob"></span><button id="bPolicy" class="on">Rules</button><button id="bGemini">Rules + Gemini</button></div>
+          <div class="tb-right"><span id="msg" class="msg"></span><button class="btn ink sm" id="runBtn" disabled>Inspect <span class="ar">→</span></button></div>
+        </div>
+        <div class="stage">
+          <div class="viewer-col">
+            <div id="viewerWrap"><div class="placeholder"><div><b>No panel loaded</b>Make a demo panel or upload an EL image to begin.</div></div></div>
+            <div class="legend"><span><span class="dot pass"></span>Fine</span><span><span class="dot fail"></span>Defect → ticket</span><span><span class="dot human"></span>Unsure → asks you</span><span id="panelInfo" style="margin-left:auto;font:12px var(--mono)"></span></div>
+          </div>
+          <div class="feed-col">
+            <div class="col-h">Agent activity <span class="c" id="feedCount"></span></div>
+            <div id="feed" class="feed"><div class="ph">Every look, decision and action appears here, live.</div></div>
+          </div>
+        </div>
+        <div class="results" id="stats"><div class="ph">Results appear after a run.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block wrap" id="results">
+    <div class="kicker reveal">Measured, not promised</div>
+    <h2 class="reveal d1">Fast, accurate and <em class="s">cheap</em> to run.</h2>
+    <p class="sub reveal d2">Tested on 655 cells the models never saw, and benchmarked against stock OpenCV and an x86 server.</p>
+    <div class="numbers">
+      <div class="n reveal"><div class="big"><span data-count="87">0</span><em class="s">%</em></div><div class="lbl">Accuracy</div><div class="note">CellNet in OpenCV 5 DNN, held-out test set</div></div>
+      <div class="n reveal d1"><div class="big"><span data-count="99">0</span></div><div class="lbl">Cells per second</div><div class="note">Full scan, one small Graviton4 server</div></div>
+      <div class="n reveal d2"><div class="big"><span data-count="3.7" data-dec="1">0</span><em class="s">×</em></div><div class="lbl">Faster after profiling</div><div class="note">27 → 99 cells/s by measuring every op</div></div>
+      <div class="n reveal d3"><div class="big"><span data-count="16">0</span><em class="s">%</em></div><div class="lbl">Cheaper than x86</div><div class="note">Cost per million cells vs c7i.large</div></div>
+    </div>
+  </section>
+
+  <section class="block wrap" id="how">
+    <div class="how">
+      <div class="how-left">
+        <div class="kicker reveal">How it works</div>
+        <h2 class="reveal d1">Look. Decide. Look <em class="s">closer.</em> Act.</h2>
+        <p class="sub reveal d2">Every step is an OpenCV 5 tool exposed over MCP. What the agent sees decides what it calls next.</p>
+        <div class="loop reveal d3"><span>perceive</span><span>decide</span><span class="hl">look closer</span><span>act</span></div>
+      </div>
+      <div class="steps">
+        <div class="st reveal"><span class="no">01</span><div><h3>Look</h3><p>Straighten the photo, split it into cells, check image quality. <code>split_panel · check_quality</code></p></div><div class="ill"><span class="bars"></span><span class="sweep"></span></div></div>
+        <div class="st reveal"><span class="no">02</span><div><h3>Score</h3><p>CellNet rates each cell 0–1 in OpenCV's DNN; classic OpenCV marks cracks and dark areas. <code>scan_cell</code></p></div><div class="ill"><span class="meter"><i></i></span></div></div>
+        <div class="st reveal"><span class="no">03</span><div><h3>Second look</h3><p>Unsure? Re-score from mirrored, flipped and enhanced views. <code>second_look</code></p></div><div class="ill"><span class="tri"><i></i><i></i><i></i></span></div></div>
+        <div class="st reveal"><span class="no">04</span><div><h3>Locate</h3><p>Hide each patch in turn — the biggest score drop is where the defect is. <code>locate_defect</code></p></div><div class="ill"><span class="hm"><i></i><i></i><i></i><i></i><i></i><i class="hot"></i><i></i><i></i><i></i></span></div></div>
+        <div class="st reveal"><span class="no">05</span><div><h3>Zoom</h3><p>Measure the mark up close: length, straightness, contrast. <code>inspect_region</code></p></div><div class="ill"><span class="lens"></span></div></div>
+        <div class="st reveal"><span class="no">06</span><div><h3>Act</h3><p>Pass it, open a repair ticket, or hand it to a human. <code>mark_pass · open_ticket · request_approval</code></p></div><div class="ill"><span class="acts"><i></i><i></i><i></i></span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block wrap" id="queue">
+    <div class="head-row">
+      <div><div class="kicker reveal">Human in control</div><h2 class="reveal d1">You make the <em class="s">hard</em> calls.</h2></div>
+      <p class="sub reveal d2">When the evidence stays mixed, the agent stops and asks. Your answer becomes the final verdict.</p>
+    </div>
+    <div class="two">
+      <div class="pc reveal"><h3>Needs your decision <span class="count" id="apprCount">0</span></h3><div id="approvals" class="approvals"><div class="empty">Nothing waiting.</div></div></div>
+      <div class="pc reveal d1"><h3>Repair tickets <span class="count" id="tixCount">0</span></h3><div id="tickets" class="tickets"><div class="empty">No tickets yet.</div></div></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="mcp">
+    <div class="dark">
+      <div>
+        <div class="kicker reveal">Model Context Protocol</div>
+        <h2 class="reveal d1">Plug your own agent <em class="s">in.</em></h2>
+        <p class="sub reveal d2">All 15 OpenCV 5 tools — scan, second look, locate, zoom, tickets and approvals — behind one MCP endpoint.</p>
+        <div class="code reveal d3"><span class="p">$</span> claude mcp add --transport http inspector <span id="mcpUrl">…/mcp</span></div>
+        <div class="row reveal d3"><button class="btn ink sm" id="copyMcp">Copy endpoint</button><span class="chip">Claude Code</span><span class="chip">Codex</span><span class="chip">Kiro</span><span class="chip">any MCP client</span></div>
+      </div>
+      <div class="chat reveal d1" id="chat">
+        <div class="bubble me">Inspect panel-12 and open tickets for cracked cells.</div>
+        <div class="bubble tool">→ split_panel(rows=4, cols=6) · 15 ms</div>
+        <div class="bubble tool">→ scan_cell × 24 · 9 ms each</div>
+        <div class="bubble tool">→ second_look · locate_defect · inspect_region</div>
+        <div class="bubble">Done — 3 cracked cells, tickets T-0041 to T-0043. One cell needs your review.<span class="caret"></span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap foot"><span>InspectorMCP — OpenCV AI Competition 2026 · OpenCV 5 (COOL) on AWS Graviton</span><span>Demo panels use the public ELPV dataset (CC BY-NC-SA 4.0)</span></div></footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="sheet" id="sheet" aria-hidden="true">
+  <div class="sheet-h"><span id="cellTitle">Cell</span><button class="x" id="sheetX" aria-label="close">×</button></div>
+  <div class="sheet-b"><img id="cellImg" alt="cell with findings marked"><div id="cellSteps" style="display:grid;gap:6px"></div></div>
+</aside>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const state = { panel: null, rows: 0, cols: 0, brain: "policy", cells: {}, steps: [], current: null, es: null, run: null };
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+async function api(path, opts = {}) {
+  const r = await fetch(path, opts);
+  const body = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(body.detail || r.statusText);
+  return body;
+}
+const say = (t) => { $("msg").textContent = t || ""; };
+
+/* ---------- motion ---------- */
+addEventListener("scroll", () => $("nav").classList.toggle("scrolled", scrollY > 8), { passive: true });
+const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+  if (!e.isIntersecting) return;
+  e.target.classList.add("in");
+  e.target.querySelectorAll("[data-count]").forEach(countUp);
+  if (e.target.id === "chat") playChat();
+  io.unobserve(e.target);
+}), { threshold: 0.2 });
+document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+function countUp(el) {
+  const end = +el.dataset.count, dec = +(el.dataset.dec || 0), t0 = performance.now(), dur = 1300;
+  const tick = (t) => { const p = Math.min((t - t0) / dur, 1); el.textContent = (end * (1 - Math.pow(1 - p, 3))).toFixed(dec); if (p < 1) requestAnimationFrame(tick); };
+  requestAnimationFrame(tick);
+}
+function playChat() { [...$("chat").children].forEach((b, i) => setTimeout(() => b.classList.add("show"), 250 + i * 650)); }
+
+/* hero: the agent keeps inspecting a real EL panel (4x6 cells of 300px with 6px gaps) */
+(function heroLoop() {
+  const mp = $("mp"), ret = $("reticle"), lines = $("toastLines");
+  const W = 6 * 306 + 6, H = 4 * 306 + 6;
+  const box = (i) => { const r = Math.floor(i / 6), c = i % 6;
+    return { left: (6 + c * 306) / W * 100, top: (6 + r * 306) / H * 100, w: 300 / W * 100, h: 300 / H * 100 }; };
+  const plan = { 4: ["f", "0.97", "crack"], 10: ["h", "0.54", ""], 17: ["f", "0.93", "crack"], 21: ["f", "0.91", "crack"] };
+  const cells = [];
+  for (let i = 0; i < 24; i++) {
+    const b = box(i), d = document.createElement("div");
+    d.className = "mcell"; d.innerHTML = '<span class="bdg"></span>';
+    Object.assign(d.style, { left: b.left + "%", top: b.top + "%", width: b.w + "%", height: b.h + "%" });
+    mp.insertBefore(d, ret); cells.push(d);
+  }
+  const place = (i) => { const b = box(i); Object.assign(ret.style, { left: b.left + "%", top: b.top + "%", width: b.w + "%", height: b.h + "%" }); };
+  let n = 0;
+  const log = (html) => {
+    const d = document.createElement("div"); d.className = "line"; d.innerHTML = html; lines.appendChild(d);
+    while (lines.children.length > 3) lines.firstChild.remove();
+    requestAnimationFrame(() => d.classList.add("show"));
+    $("toastStep").textContent = `step ${++n}`;
+  };
+  const tally = { p: 0, f: 0, h: 0 };
+  const show = (i) => { $("visCount").textContent = i; $("vprog").style.width = (i / 24 * 100) + "%";
+    $("vp").textContent = tally.p; $("vf").textContent = tally.f; $("vh").textContent = tally.h; };
+  const reset = () => { cells.forEach((c) => c.className = "mcell"); tally.p = tally.f = tally.h = 0; n = 0; show(0); };
+  const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+  async function run() {
+    for (;;) {
+      reset(); ret.style.opacity = 1;
+      for (let i = 0; i < 24; i++) {
+        const r = Math.floor(i / 6) + 1, c = (i % 6) + 1, [v, s, kind] = plan[i] || ["p", "0.0" + (i % 7 + 1), ""];
+        place(i); await wait(420);
+        if (v === "p") { if (i % 4 === 0) log(`scan_cell r${r}c${c} → <span class="ok">${s}</span>`); await wait(140); }
+        else {
+          log(`scan_cell r${r}c${c} → <span class="${v === "f" ? "bad" : ""}">${s}</span>`);
+          ret.classList.add("lock"); await wait(650);
+          if (v === "f") { log(`locate_defect → hot patch`); await wait(500); log(`open_ticket → <span class="bad">${kind}</span>`); }
+          else { log(`second_look → 0.52 ± 0.21`); await wait(500); log(`request_approval → <span style="color:var(--human)">you</span>`); }
+          ret.classList.remove("lock"); await wait(250);
+        }
+        cells[i].classList.add(v); tally[v]++; show(i + 1);
+      }
+      ret.style.opacity = 0; await wait(3200);
+    }
+  }
+  if (calm) { cells.forEach((c, i) => { const v = (plan[i] || ["p"])[0]; c.classList.add(v); tally[v]++; }); show(24); ret.style.opacity = 0; }
+  else { place(0); setTimeout(run, 1200); }
+})();
+
+/* ---------- info ---------- */
+async function loadInfo() {
+  try {
+    const i = await api("/api/info");
+    const kleidi = (i.build || []).join(" ").match(/KleidiCV \(ver ([^)]+)\)/);
+    $("build").textContent = `OpenCV ${i.opencv_version}${kleidi ? " · KleidiCV " + kleidi[1] : ""} · arm64`;
+    if (!i.gemini) { $("bGemini").disabled = true; $("bGemini").title = "Gemini key not configured"; }
+  } catch (e) { /* decorative */ }
+  $("mcpUrl").textContent = location.origin + "/mcp";
+}
+$("copyMcp").onclick = async () => {
+  try { await navigator.clipboard.writeText(location.origin + "/mcp"); $("copyMcp").textContent = "Copied ✓"; setTimeout(() => $("copyMcp").textContent = "Copy endpoint", 1600); } catch (e) {}
+};
+
+/* ---------- brain toggle ---------- */
+function setBrain(b) {
+  state.brain = b;
+  const on = b === "policy" ? $("bPolicy") : $("bGemini");
+  $("bPolicy").classList.toggle("on", b === "policy"); $("bGemini").classList.toggle("on", b === "gemini");
+  $("knob").style.width = on.offsetWidth + "px"; $("knob").style.transform = `translateX(${on.offsetLeft - 4}px)`;
+}
+$("bPolicy").onclick = () => setBrain("policy"); $("bGemini").onclick = () => setBrain("gemini");
+addEventListener("resize", () => setBrain(state.brain));
+
+/* ---------- panels ---------- */
+function showPanel(p) {
+  state.panel = p.image_id; state.rows = p.rows; state.cols = p.cols; state.cells = {};
+  $("panelInfo").textContent = `${p.rows}×${p.cols} · ${p.image_id}`;
+  let boxes = "";
+  for (let r = 0; r < p.rows; r++) for (let c = 0; c < p.cols; c++)
+    boxes += `<div class="cellbox" id="c${r}_${c}" data-r="${r}" data-c="${c}"><span class="tag"></span></div>`;
+  $("viewerWrap").innerHTML = `<div class="viewer"><img src="/api/images/${p.image_id}.png" alt="solar panel EL image">` +
+    `<div class="overlay" style="grid-template-rows:repeat(${p.rows},1fr);grid-template-columns:repeat(${p.cols},1fr)">${boxes}</div></div>`;
+  document.querySelectorAll(".cellbox").forEach((el) => el.onclick = () => showCell(+el.dataset.r, +el.dataset.c));
+  $("runBtn").disabled = false;
+}
+async function makeDemo() {
+  say("");
+  try {
+    showPanel(await api("/api/panels/demo", { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ rows: +$("rows").value, cols: +$("cols").value }) }));
+    return true;
+  } catch (e) { say(e.message); return false; }
+}
+$("demoBtn").onclick = makeDemo;
+async function quick() { $("console").scrollIntoView({ behavior: "smooth", block: "start" }); if (await makeDemo()) startRun(); }
+$("quickBtn").onclick = quick; $("navTry").onclick = quick;
+$("file").onchange = async () => {
+  const f = $("file").files[0]; if (!f) return;
+  say("");
+  const fd = new FormData(); fd.append("file", f); fd.append("rows", $("rows").value); fd.append("cols", $("cols").value);
+  try { showPanel(await api("/api/panels/upload", { method: "POST", body: fd })); } catch (e) { say(e.message); }
+  $("file").value = "";
+};
+
+/* ---------- live run ---------- */
+function stepHtml(s) {
+  if (s.kind === "cell") return `<div class="step cell">Cell · row ${s.row + 1}, col ${s.col + 1}</div>`;
+  if (s.kind === "llm") return `<div class="step llm"><span class="who">${esc(s.model)}</span> — ${esc(s.text)}</div>`;
+  if (s.kind === "decision") {
+    const word = { pass: "Pass", fail: "Defect → ticket", human: "Ask human" }[s.decision] || s.decision;
+    return `<div class="step decision"><span class="badge ${s.decision}">${word} · ${s.score}</span></div>`;
+  }
+  if (s.kind === "tool") {
+    const args = Object.entries(s.args || {}).filter(([k]) => k !== "image_id")
+      .map(([k, v]) => `${k}=${typeof v === "string" && v.length > 32 ? v.slice(0, 32) + "…" : v}`).join(", ");
+    return `<div class="step"><span class="ms">${s.ms} ms</span><span class="t">${esc(s.tool)}</span><span class="a">(${esc(args)})</span>` +
+      (s.why ? `<div class="why">${esc(s.why)}</div>` : "") + `</div>`;
+  }
+  return "";
+}
+function onStep(s) {
+  state.steps.push(s);
+  const feed = $("feed");
+  if (state.steps.length === 1) feed.innerHTML = "";
+  if (s.kind === "cell") {
+    state.current = `${s.row}_${s.col}`;
+    state.cells[state.current] = { image_id: s.image_id, steps: [], row: s.row, col: s.col };
+    document.querySelectorAll(".cellbox.busy").forEach((el) => el.classList.remove("busy"));
+    $("c" + state.current)?.classList.add("busy");
+  }
+  if (state.current && state.cells[state.current] && s.kind !== "cell") state.cells[state.current].steps.push(s);
+  if (s.kind === "decision") {
+    const el = $(`c${s.row}_${s.col}`);
+    if (el) { el.classList.remove("busy"); el.classList.add(s.decision); el.querySelector(".tag").textContent = s.score; }
+  }
+  if (s.kind === "end") { finish(); return; }
+  const tools = state.steps.filter((x) => x.kind === "tool").length;
+  $("feedCount").textContent = tools ? `${tools} tool calls` : "";
+  const html = stepHtml(s);
+  if (html) { feed.insertAdjacentHTML("beforeend", html); feed.scrollTop = feed.scrollHeight; }
+}
+const lock = (on) => ["runBtn", "demoBtn", "quickBtn", "navTry"].forEach((id) => $(id).disabled = on);
+$("runBtn").onclick = () => startRun();
+async function startRun() {
+  if (!state.panel) return;
+  say(""); lock(true);
+  state.steps = []; $("feed").innerHTML = '<div class="ph">Starting…</div>'; $("feedCount").textContent = "";
+  document.querySelectorAll(".cellbox").forEach((el) => { el.className = "cellbox"; el.querySelector(".tag").textContent = ""; });
+  try {
+    const { run_id } = await api("/api/runs", { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ panel_id: state.panel, rows: state.rows, cols: state.cols, brain: state.brain }) });
+    state.run = run_id;
+    state.es = new EventSource(`/api/runs/${run_id}/events`);
+    state.es.onmessage = (e) => onStep(JSON.parse(e.data));
+    state.es.onerror = () => { state.es.close(); finish(); };
+  } catch (e) { say(e.message); lock(false); }
+}
+async function finish() {
+  if (state.es) state.es.close();
+  lock(false);
+  document.querySelectorAll(".cellbox.busy").forEach((el) => el.classList.remove("busy"));
+  try {
+    const run = await api(`/api/runs/${state.run}`);
+    if (run.status === "error") say("Run failed: " + run.error);
+    if (run.summary) renderStats(run.summary);
+  } catch (e) { say(e.message); }
+  refreshSide();
+}
+function renderStats(s) {
+  const items = [["Cells", s.cells, ""], ["Pass", s.pass, "pass"], ["Defects", s.fail, "fail"], ["Ask human", s.human, "human"],
+    ["ms per cell", s.ms_per_cell, ""], ["Tool calls", s.tool_calls, ""]];
+  if (s.llm_requests) items.push(["Gemini calls", s.llm_requests, ""]);
+  if (s.agreement_with_labels !== undefined) items.push(["Matches labels*", Math.round(s.agreement_with_labels * 100) + "%", ""]);
+  $("stats").innerHTML = items.map(([k, v, c]) => `<div class="res"><div class="v ${c}">${esc(v)}</div><div class="k">${esc(k)}</div></div>`).join("") +
+    (s.agreement_with_labels !== undefined ? `<div class="ph">* Of the cells the agent decided by itself. Demo panels are built from labelled dataset cells.</div>` : "");
+}
+
+/* ---------- cell sheet ---------- */
+function openSheet(on) { $("sheet").classList.toggle("open", on); $("scrim").classList.toggle("open", on); $("sheet").setAttribute("aria-hidden", !on); }
+$("sheetX").onclick = () => openSheet(false); $("scrim").onclick = () => openSheet(false);
+addEventListener("keydown", (e) => { if (e.key === "Escape") openSheet(false); });
+function showCell(r, c) {
+  const cell = state.cells[`${r}_${c}`];
+  if (!cell) return;
+  $("cellTitle").textContent = `Cell · row ${r + 1}, col ${c + 1}`;
+  $("cellImg").src = `/api/images/${cell.image_id}.png?overlay=1`;
+  $("cellSteps").innerHTML = cell.steps.map(stepHtml).join("") || '<div class="empty">Not inspected yet.</div>';
+  openSheet(true);
+}
+
+/* ---------- approvals & tickets ---------- */
+async function refreshSide() {
+  try {
+    const appr = await api("/api/approvals");
+    $("apprCount").textContent = appr.filter((a) => a.status === "pending").length;
+    $("approvals").innerHTML = appr.length ? appr.slice(0, 8).map((a) => `
+      <div class="appr">
+        <img src="/api/images/${a.image_id}.png?overlay=1" alt="cell needing review">
+        <div>
+          <div class="title">${a.row != null ? `Row ${a.row + 1}, col ${a.col + 1}` : esc(a.image_id)}</div>
+          <div class="reason">${esc(a.reason)}</div>
+          ${a.status === "pending"
+            ? `<div class="row"><button class="btn ink sm" onclick="decide('${a.approval_id}', true)">Defect</button><button class="btn ghost sm" onclick="decide('${a.approval_id}', false)">No defect</button></div>`
+            : `<span class="badge ${a.status === "defect" ? "fail" : "pass"}">${a.status === "defect" ? "You: defect → ticket" : "You: no defect → passed"}</span>`}
+        </div>
+      </div>`).join("") : '<div class="empty">Nothing waiting.</div>';
+    const t = await api("/api/tickets");
+    $("tixCount").textContent = t.length;
+    $("tickets").innerHTML = t.length ? t.slice(0, 8).map((x) => `
+      <div class="ticket">
+        <span class="id">${esc(x.ticket_id)}</span>
+        <div><div class="what">${esc(x.defect)} · ${x.row != null ? `r${x.row + 1} c${x.col + 1}` : esc(x.image_id)}</div><div class="ev">${esc(x.evidence)}</div></div>
+        <span class="badge ${x.severity === "high" ? "fail" : x.severity === "medium" ? "human" : "pass"}">${esc(x.severity)}</span>
+      </div>`).join("") : '<div class="empty">No tickets yet.</div>';
+  } catch (e) { /* refreshes again after the next run */ }
+}
+window.decide = async (id, defect) => {
+  try { await api(`/api/approvals/${id}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ defect }) }); refreshSide(); }
+  catch (e) { say(e.message); }
+};
+
+loadInfo(); refreshSide();
+requestAnimationFrame(() => setBrain("policy"));
+</script>
+</body>
+</html>

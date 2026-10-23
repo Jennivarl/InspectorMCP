@@ -1,0 +1,56 @@
+{
+ "engine": "OpenCV 5.1.0-dev DNN",
+ "test": 655,
+ "ms_per_image_batch32": 1.96,
+ "ms_per_image_single": 2.34,
+ "test_metrics": {
+  "threshold": 0.6,
+  "accuracy": 0.8702,
+  "precision": 0.8704,
+  "recall": 0.6878,
+  "f1": 0.7684,
+  "auc": 0.9074,
+  "tp": 141,
+  "fp": 21,
+  "fn": 64,
+  "tn": 429
+ },
+ "test_by_type": {
+  "mono": {
+   "threshold": 0.6,
+   "accuracy": 0.8704,
+   "precision": 0.8875,
+   "recall": 0.732,
+   "f1": 0.8023,
+   "auc": 0.9025,
+   "tp": 71,
+   "fp": 9,
+   "fn": 26,
+   "tn": 164
+  },
+  "poly": {
+   "threshold": 0.6,
+   "accuracy": 0.8701,
+   "precision": 0.8537,
+   "recall": 0.6481,
+   "f1": 0.7368,
+   "auc": 0.9124,
+   "tp": 70,
+   "fp": 12,
+   "fn": 38,
+   "tn": 265
+  }
+ },
+ "single_pass_baseline": {
+  "threshold": 0.53,
+  "accuracy": 0.774,
+  "precision": 0.6234,
+  "recall": 0.7024,
+  "f1": 0.6606,
+  "auc": 0.8356,
+  "tp": 144,
+  "fp": 87,
+  "fn": 61,
+  "tn": 363
+ }
+}

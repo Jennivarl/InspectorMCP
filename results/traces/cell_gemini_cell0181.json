@@ -1,0 +1,234 @@
+{
+ "image_id": "cell-2",
+ "decision": "human",
+ "score": 0.344,
+ "by": "gemini-3.5-flash-lite",
+ "trace": [
+  {
+   "n": 1,
+   "t": 1792722158.051,
+   "kind": "tool",
+   "tool": "check_quality",
+   "args": {
+    "image_id": "cell-1"
+   },
+   "why": "is the image good enough to judge?",
+   "result": {
+    "sharpness": 5.94,
+    "brightness": 112.34,
+    "contrast": 24.19,
+    "clipped_dark": 0.0,
+    "clipped_bright": 0.0,
+    "ms": 1.33
+   },
+   "images": 0,
+   "ms": 2.6
+  },
+  {
+   "n": 2,
+   "t": 1792722158.052,
+   "kind": "tool",
+   "tool": "enhance_image",
+   "args": {
+    "image_id": "cell-1",
+    "method": "clahe"
+   },
+   "why": "low contrast/sharpness - boost before judging",
+   "result": {
+    "image_id": "cell-2",
+    "ms": 0.29
+   },
+   "images": 0,
+   "ms": 0.8
+  },
+  {
+   "n": 3,
+   "t": 1792722158.078,
+   "kind": "tool",
+   "tool": "scan_cell",
+   "args": {
+    "image_id": "cell-2"
+   },
+   "why": "score the cell and find marks",
+   "result": {
+    "image_id": "cell-2",
+    "score": 0.326,
+    "verdict": "uncertain",
+    "rule_score": 0.821,
+    "cracks": [],
+    "spots": "[5 items]",
+    "dark_areas": [
+     {
+      "box": [
+       216,
+       262,
+       43,
+       30
+      ],
+      "area": 728
+     },
+     {
+      "box": [
+       86,
+       121,
+       12,
+       21
+      ],
+      "area": 208
+     },
+     {
+      "box": [
+       120,
+       280,
+       14,
+       12
+      ],
+      "area": 134
+     }
+    ],
+    "dark_fraction": 0.0194,
+    "grain": 13.12,
+    "ms": 25.94
+   },
+   "images": 0,
+   "ms": 26.6
+  },
+  {
+   "n": 4,
+   "t": 1792722158.104,
+   "kind": "tool",
+   "tool": "view_cell",
+   "args": {
+    "image_id": "cell-2"
+   },
+   "why": "show the model the cell",
+   "result": [],
+   "images": 1,
+   "ms": 11.9
+  },
+  {
+   "n": 5,
+   "t": 1792722162.678,
+   "kind": "tool",
+   "tool": "second_look",
+   "args": {
+    "image_id": "cell-2"
+   },
+   "why": "gemini-3.5-flash-lite chose this",
+   "result": {
+    "image_id": "cell-2",
+    "scores": {
+     "original": 0.326,
+     "mirror": 0.624,
+     "flip": 0.094,
+     "rotate180": 0.331,
+     "clahe": 0.118,
+     "denoise": 0.571
+    },
+    "mean": 0.344,
+    "spread": 0.53,
+    "verdict": "uncertain",
+    "ms": 13.41
+   },
+   "images": 0,
+   "ms": 14.7
+  },
+  {
+   "n": 6,
+   "t": 1792722191.061,
+   "kind": "llm",
+   "model": "gemini-3.5-flash",
+   "text": "I am locating where the model sees potential defect regions using locate_defect."
+  },
+  {
+   "n": 7,
+   "t": 1792722191.086,
+   "kind": "tool",
+   "tool": "locate_defect",
+   "args": {
+    "image_id": "cell-2"
+   },
+   "why": "I am locating where the model sees potential defect regions using locate_defect.",
+   "result": {
+    "image_id": "cell-2",
+    "heat": [
+     [
+      -0.5080000162124634,
+      -0.5370000004768372,
+      -0.5389999747276306
+     ],
+     [
+      -0.43299999833106995,
+      -0.6309999823570251,
+      -0.6380000114440918
+     ],
+     [
+      -0.46299999952316284,
+      -0.5849999785423279,
+      -0.43700000643730164
+     ]
+    ],
+    "hot_box": "[4 items]",
+    "hot_drop": -0.433,
+    "ms": 24.22
+   },
+   "images": 0,
+   "ms": 25.1
+  },
+  {
+   "n": 8,
+   "t": 1792722195.317,
+   "kind": "llm",
+   "model": "gemini-3.5-flash-lite",
+   "text": "I am inspecting the hottest region found by locate_defect to determine if it is a real defect."
+  },
+  {
+   "n": 9,
+   "t": 1792722195.335,
+   "kind": "tool",
+   "tool": "inspect_region",
+   "args": {
+    "w": 100,
+    "image_id": "cell-2",
+    "y": 0,
+    "h": 100,
+    "x": 100
+   },
+   "why": "I am inspecting the hottest region found by locate_defect to determine if it is a real defect.",
+   "result": {
+    "longest_line": 123.7,
+    "line_count": 20,
+    "straightness": 0.246,
+    "contrast": 61.5,
+    "ms": 15.75
+   },
+   "images": 1,
+   "ms": 18.4
+  },
+  {
+   "n": 10,
+   "t": 1792722200.223,
+   "kind": "tool",
+   "tool": "request_approval",
+   "args": {
+    "reason": "The second look spread is high (0.53) with conflicting scores across views (denoise/mirror show higher defect scores while CLAHE/flip show low scores), and the zoomed region shows grainy polycrystalline texture around a busbar without clear structural cracking. A human expert should review this cell.",
+    "proposed_action": "open_ticket or mark_pass",
+    "image_id": "cell-2"
+   },
+   "why": "gemini-3.5-flash-lite chose this",
+   "result": {
+    "approval_id": "A-0001",
+    "status": "pending",
+    "created": 1792722200.22298,
+    "image_id": "cell-2",
+    "panel": null,
+    "row": null,
+    "col": null,
+    "proposed_action": "open_ticket or mark_pass",
+    "reason": "The second look spread is high (0.53) with conflicting scores across views (denoise/mirror show higher defect scores while CLAHE/flip show low scores), and the zoomed region shows grainy polycrystalline texture around a busbar without clear structural cracking. A human expert should review this cell."
+   },
+   "images": 0,
+   "ms": 0.6
+  }
+ ]
+}

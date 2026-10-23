@@ -1,0 +1,23 @@
+[
+ {
+  "setup": "Graviton4 c8g.large + COOL (OpenCV 5.1)",
+  "usd_per_hour": 0.0898,
+  "scan_ms_per_cell": 9.28,
+  "cells_per_second": 99.3,
+  "usd_per_million_cells": 0.251
+ },
+ {
+  "setup": "Graviton4 c8g.large + stock OpenCV 5.0 wheel",
+  "usd_per_hour": 0.0798,
+  "scan_ms_per_cell": 9.14,
+  "cells_per_second": 100.9,
+  "usd_per_million_cells": 0.22
+ },
+ {
+  "setup": "x86 c7i.large (Xeon 8488C) + stock OpenCV 5.0 wheel",
+  "usd_per_hour": 0.0892,
+  "scan_ms_per_cell": 11.09,
+  "cells_per_second": 83.2,
+  "usd_per_million_cells": 0.298
+ }
+]
