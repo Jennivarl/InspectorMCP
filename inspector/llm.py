@@ -40,6 +40,10 @@ Then finish with exactly ONE action:
 Before every tool call, say in one short sentence why you are calling it."""
 
 
+class LLMUnavailable(RuntimeError):
+    """Gemini cannot answer right now (quota used up, outage) - the cell falls back to the rule brain."""
+
+
 def _load_env() -> None:
     env = Path(__file__).resolve().parent.parent / ".env"
     if env.exists():
@@ -56,6 +60,7 @@ class GeminiBrain(PolicyBrain):
         _load_env()
         self.client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
         self.models = [model, fallback]
+        self.exhausted: set[str] = set()  # models whose daily free quota is used up
         self.requests = 0
         self._decls = None
 
@@ -74,18 +79,31 @@ class GeminiBrain(PolicyBrain):
         """Call Gemini; on rate limits or overload, back off and fall back to the lighter model."""
         last = None
         for attempt in range(6):
-            model = self.models[min(attempt // 2, 1)]
+            live = [m for m in self.models if m not in self.exhausted]
+            if not live:
+                break
+            model = live[min(attempt // 2, len(live) - 1)]
             try:
                 self.requests += 1
                 return await self.client.aio.models.generate_content(model=model, contents=contents, config=config), model
             except errors.APIError as e:
                 last = e
+                if e.code == 429 and "PerDay" in str(e):
+                    self.exhausted.add(model)  # no point retrying this model today
+                    continue
                 if e.code not in (429, 500, 503):
-                    raise
-                await asyncio.sleep(2 ** attempt)
-        raise last
+                    break
+                await asyncio.sleep(min(2 ** attempt, 8))
+        raise LLMUnavailable(str(last)[:200] if last else "no Gemini model has quota left")
 
     async def resolve_uncertain(self, tools: Tools, image_id: str, scan: dict) -> dict:
+        try:
+            return await self._resolve_with_llm(tools, image_id, scan)
+        except LLMUnavailable:
+            tools.trace.add("llm", model="gemini", text="Gemini is unavailable right now (quota or outage) - using the rule brain for this cell.")
+            return await super().resolve_uncertain(tools, image_id, scan)
+
+    async def _resolve_with_llm(self, tools: Tools, image_id: str, scan: dict) -> dict:
         config = types.GenerateContentConfig(
             system_instruction=SYSTEM,
             tools=[types.Tool(function_declarations=await self._declarations(tools))],

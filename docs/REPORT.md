@@ -1,6 +1,7 @@
 # InspectorMCP — Technical Report
 
 **OpenCV AI Competition 2026, powered by AWS** · Paths: Agentic Vision and Best Use of COOL
+
 Live: <https://inspector-mcp.vercel.app> · MCP endpoint: `https://inspector-mcp.vercel.app/mcp`
 
 ---
@@ -86,7 +87,7 @@ What the vision tools return decides which tool is called next:
 **Two brains share the same loop and tools:**
 
 - **Rules (default):** fixed and auditable, with no LLM call.
-- **Rules + Gemini:** clear cells keep the rule path. For an uncertain cell, a Gemini model gets the scan numbers and a marked-up picture of the cell, chooses its own tool calls (it sees the zoomed images those calls return), and must finish with exactly one action. If it has not decided after 8 turns, the cell goes to a human.
+- **Rules + Gemini:** clear cells keep the rule path. For an uncertain cell, a Gemini model gets the scan numbers and a marked-up picture of the cell, chooses its own tool calls (it sees the zoomed images those calls return), and must finish with exactly one action. If it has not decided after 8 turns, the cell goes to a human. If the Gemini API is unavailable (quota or outage), that cell falls back to the rule path, so a run never fails because of the LLM.
 
 **Human control:** an uncertain cell is never forced into a verdict. `request_approval` puts it in the console queue with the evidence, and the person's answer becomes the final verdict (a ticket or a pass). Actions are limited to recording verdicts and opening tickets. Nothing irreversible happens without a person.
 
