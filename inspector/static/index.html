@@ -250,6 +250,7 @@ h2 { font-size: clamp(32px, 4.2vw, 54px); line-height: 1.02; letter-spacing: -.0
 /* ---------- MCP (dark) ---------- */
 .dark { background: #121211; color: #f4f3ef; border-radius: 36px; padding: 70px 60px; margin-top: 130px; display: grid; grid-template-columns: 1fr 1.05fr; gap: 50px; align-items: center; position: relative; overflow: hidden; }
 .dark::before { content: ""; position: absolute; width: 520px; height: 520px; right: -160px; top: -200px; background: radial-gradient(circle, rgba(232,89,12,.28), transparent 65%); pointer-events: none; }
+.dark > div { min-width: 0; }
 .dark .kicker { color: #ffa877; } .dark h2 { color: #fff; } .dark .sub { color: #a8a69e; }
 .code { margin-top: 26px; background: #1d1d1b; border: 1px solid #2c2c29; border-radius: var(--r-md); padding: 14px 16px; font: 13px/1.6 var(--mono); color: #d6d4cc; overflow-x: auto; white-space: nowrap; }
 .code .p { color: #ffa877; }
